@@ -20,6 +20,16 @@
             cursor: pointer;
         }
 
+        .btn {
+            background-color:#e40053 ;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-family: 'Chivo', sans-serif;
+    font-size: 20px;
+    color: #9ac1e7;
+        }
+
         @font-face {
   font-family: "Lemonism";
   src: url("vendor/lemonism/lemonism.otf");
@@ -43,6 +53,8 @@
         .sipario {
     width: 100%;
     height: 100%;
+    z-index: 10;
+    position: relative;
         }
 
         .sipario-bkg {
@@ -273,8 +285,8 @@ margin-top: 80px;
                 <img src="img/loghi/logo-lou-tapage-negative.jpg" alt="">
             </div>
             
-            <a onclick="UTIL.scrollTo();"><div style="    margin-top: 40px;">presentano</div></a>
-            <a onclick="UTIL.scrollTo();"><svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg></a>
+            <a onclick="UTIL.scrollTo(document.body.clientHeight);"><div style="    margin-top: 40px;">presentano</div></a>
+            <a onclick="UTIL.scrollTo(document.body.clientHeight);"><svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg></a>
         </div>
         <img src="img/sipario.svg" alt="">
     </div>
@@ -294,7 +306,8 @@ margin-top: 80px;
                 <a href="https://www.instagram.com/staseranonvienenessuno_/" target="_blank" rel="noopener noreferrer"><img src="img/instagram.svg" alt="Instagram"></a>
                 <a href="https://www.youtube.com/channel/UCRoKzBP9y8rmdcRSgY-0a5Q/" target="_blank" rel="noopener noreferrer"><img src="img/youtube.svg" alt="YouTube"></a>
             </div>
-            
+            <br>
+            <a onclick="UTIL.scrollTo('.secondary');" class="btn">SCOPRI IL PROGRAMMA</a>
         </header>
     </section>
     <section class="secondary">
@@ -401,8 +414,10 @@ margin-top: 80px;
             duration: 3
         });
 
+        let offset = document.body.clientHeight / 100 * 20;
+
         gsap.set('.intro > *', {
-            translateY:'100px',
+            translateY:offset,
         });
         gsap.to('.intro > *', {
             scrollTrigger: {
@@ -411,15 +426,15 @@ margin-top: 80px;
                 end: 'bottom bottom',
                 scrub: 1,
             },
-            translateY: '-=100px',
+            translateY: '-=' + offset,
             duration: 3
         });
 
         var UTIL = (function(){
             let util = {};
 
-            util.scrollTo = function() {
-                gsap.to(window, {duration: 1, scrollTo: document.body.clientHeight});
+            util.scrollTo = function(selector) {
+                gsap.to(window, {duration: 1, scrollTo: selector});
             }
 
             return util;
