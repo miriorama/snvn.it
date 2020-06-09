@@ -197,11 +197,20 @@ margin-top: 80px;
 }
 
 
+.scroll-down {
+    text-align: center;
+}
+
 @media screen and (max-width: 768px) {
   section {
     flex-direction: column;
     
   }
+
+  .scroll-down {
+    position: absolute; bottom: 50px;text-align: center;
+}
+
   .intro {
     align-items: center;
     
@@ -261,6 +270,13 @@ margin-top: 80px;
         margin-bottom: 10px;
     }
 
+    .sipario .sponsor-list {
+        margin-top: -100px;
+    }
+    .sipario .sponsor-list img:not(:first-child) {
+        margin-top: 20px;
+    }
+
 }
 
 @keyframes bounce {
@@ -285,8 +301,10 @@ margin-top: 80px;
                 <img src="img/loghi/logo-lou-tapage-negative.jpg" alt="">
             </div>
             
-            <a onclick="UTIL.scrollTo(document.body.clientHeight);"><div style="    margin-top: 40px;">presentano</div></a>
-            <a onclick="UTIL.scrollTo(document.body.clientHeight);"><svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg></a>
+            <a class="scroll-down" onclick="UTIL.scrollTo(document.body.clientHeight);">
+                <div style="    margin-top: 40px;">presentano</div>
+                <svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
+            </a>
         </div>
         <img src="img/sipario.svg" alt="">
     </div>
