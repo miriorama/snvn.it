@@ -1,0 +1,434 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#SNVN</title>
+
+    <link rel="icon" type="image/png" href="img/favicon-cactus.png" >
+    
+    <meta name="apple-mobile-web-app-title" content="#SNVN - Stasera non viene nessuno" />
+    <meta name="application-name" content="#SNVN - Stasera non viene nessuno" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            margin: 0;
+        }
+        a {
+            cursor: pointer;
+        }
+
+        @font-face {
+  font-family: "Lemonism";
+  src: url("vendor/lemonism/lemonism.otf");
+  }
+
+        section {
+            width: 100%;
+            padding: 100px 0;
+        }
+
+        .social {
+            display: flex;
+            margin-top: 10px;
+            margin-left: -5px;
+        }
+
+        .social img {
+            width: 40px;
+        }
+
+        .sipario {
+            position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+        }
+
+        .sipario-bkg {
+            width:100%;background-color: #192a48;
+            height: 100%;
+            color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lemonism', cursive;
+    font-size: 3em;
+        }
+
+
+        .intro {            
+            height: 100%;
+    background-color: #9ac1e7;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+        }
+        .poltrona {
+            width: 400px;
+    margin-right: 70px;
+        }
+        .poltrona img{
+            width: 100%;
+    max-width: 400px;
+        }
+
+        header {
+            padding: 30px 0;
+    color: #e40053;
+    font-size: 2em;
+    margin-top: 40px;
+        }
+        header h5,header h2 {
+            margin:0;
+        }
+
+        h2,h5 {
+            font-family: 'Chivo', sans-serif;
+        }
+        .tag {
+            font-family: 'Lemonism', cursive;
+            color: #192a48;
+            font-size: 1.5em;
+        }
+
+        .secondary {
+            background-color: #f9c29d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .date {
+            color: #e40053;
+            font-family: 'Lemonism', cursive;
+            display: block;
+            font-size: 1.4em;
+        }
+
+        .calendar {
+            font-family: 'Chivo', sans-serif;
+    color: #192a48;
+    font-size: 1.5em;
+    list-style: none;
+    text-align: right;
+        }
+
+        .calendar li:not(:first-child) {
+            margin-top: 15px;
+        }
+
+
+        .video-container {
+    position: relative;
+    width:60%;
+    margin-left: 50px;
+}
+
+.video-container::after {
+    padding-top: 56.25%;
+    display: block;
+    content: '';
+}
+
+.video-container > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cactus {
+    position: absolute;
+    width: 100px;
+    bottom: 0;
+    right: -60px;
+}
+
+.sponsor h2 {
+    text-align: center;
+    opacity: .5;
+}
+
+
+.sponsor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sponsor img:not(:last-child) {
+    margin-right: 30px;
+}
+
+.sponsor h2:not(:first-child) {
+margin-top: 80px;
+}
+
+.footer {
+    background-color: #192a48;
+    color: #e40053;
+    font-family: 'Chivo', sans-serif;
+    text-align: center;
+    font-size: 1em;
+}
+.footer .social {
+    margin: 0;
+    display: block;
+}
+
+.arrow-down {
+    margin-top: 10px;
+    fill: white;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+  section {
+    flex-direction: column;
+    
+  }
+  .intro {
+    align-items: center;
+    
+    font-size: 0.6em;
+  }
+
+  .intro header {
+    text-align: center;
+    padding: 0;
+  }
+
+  .social {
+    justify-content: center;    
+    }
+    .poltrona {
+    width: calc(100% - 80px);
+    padding: 0 40px;
+    margin: 0;
+    }
+
+    .calendar {
+        text-align: center;
+        margin:0;
+        padding: 0;
+    }
+
+    .video-container {
+        width: 100%;
+        margin: 50px 0 0 0;
+    }
+
+    .secondary {
+        padding: 30px 0 0 0;
+    }
+
+    .cactus {
+        position: absolute;
+        width: 80px;
+        left: 5%;
+        top: -156px;
+    }
+
+    .sponsor {
+        padding: 40px 0;
+    }
+
+    .sponsor-list {
+    display: flex;
+    flex-direction: column;
+    }
+
+    .sponsor h2:not(:first-child) {
+    margin-top: 40px;
+    }
+
+    .sponsor img {
+        margin-bottom: 10px;
+    }
+
+}
+
+@keyframes bounce {
+    0% {transform: translateY(0);}
+    80% {transform: translateY(10px);}
+	100% {transform: translateY(0);}
+}
+
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@900&display=swap" rel="stylesheet">
+    <script src="/vendor/gsap/gsap.min.js"></script>
+    <script src="/vendor/gsap/ScrollTrigger.min.js"></script>
+    <script src="/vendor/gsap/ScrollToPlugin.min.js"></script>
+</head>
+<body>
+    <div class="sipario">
+        <div class="sipario-bkg" style="">
+            <div class="sponsor-list">
+                <img src="img/loghi/logo-orchestra-negative.jpg" alt="">
+                <img src="img/loghi/logo-allinone-negative.jpg" alt="">
+                <img src="img/loghi/logo-lou-tapage-negative.jpg" alt="">
+            </div>
+            
+            <a onclick="UTIL.scrollTo();"><div style="    margin-top: 40px;">presentano</div></a>
+            <a onclick="UTIL.scrollTo();"><svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg></a>
+        </div>
+        <img src="img/sipario.svg" alt="">
+    </div>
+
+    
+    <!--<section style="background: url('img/teatro.png')"></section>-->
+    <section class="intro">
+        <div class="poltrona">
+            <img src="img/poltrona.svg" alt="Stasera non viene nessuno">
+        </div>
+        <header>
+            <span class="tag">#SNVN</span>
+            <h2>Spettacolo live <br>in diretta streaming</h2>
+            <h5>Ogni lunedì dalle 21.30</h5>
+            <div class="social">
+                <a href="https://www.facebook.com/Stasera-Non-Viene-Nessuno-109503880783508" target="_blank" rel="noopener noreferrer"><img src="img/facebook.svg" alt="Facebook"></a>
+                <a href="https://www.instagram.com/staseranonvienenessuno_/" target="_blank" rel="noopener noreferrer"><img src="img/instagram.svg" alt="Instagram"></a>
+                <a href="https://www.youtube.com/channel/UCRoKzBP9y8rmdcRSgY-0a5Q/" target="_blank" rel="noopener noreferrer"><img src="img/youtube.svg" alt="YouTube"></a>
+            </div>
+            
+        </header>
+    </section>
+    <section class="secondary">
+        <ul class="calendar">
+            <li>
+                <span class="date">15 GIUGNO 2020</span>
+                Lou Tapage
+            </li>
+            <li>
+                <span class="date">22 GIUGNO 2020</span>
+                Magasin du cafè
+            </li>
+            <li>
+                <span class="date">29 GIUGNO 2020</span>
+                Radio Ravot
+            </li>
+            <li>
+                <span class="date">06 LUGLIO 2020</span>
+                L'ora canonica
+            </li>
+        </ul>
+        <div class="video-container">
+            <a href="https://www.youtube.com/watch?v=3uP_kypToLo" target="_blank" rel="noopener noreferrer"><img src="img/video-cover-play.jpg" style="display:inline-block; width:100%;" alt=""></a>
+            <svg id="Livello_1" class="cactus" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 414.51 813.41" style="
+
+">
+                <defs>
+                    <style>
+                        .cls-1{fill:#118ab2;}.cls-2{fill:#ea1c5e;}.cls-3{fill:#b5ad4a;}.cls-4{fill:#fbbc97;}
+                    </style>
+                </defs>
+                <title>
+                    cactus-fiorito
+                </title>
+                <path class="cls-2" d="M226.25,825.11c-4.14-16.59-76.88-142-65.54-162.6s18.82-33.64,65.54-31.77,177.55-7.48,190.64,13.08-28,179.42-33.64,181.29S226.25,825.11,226.25,825.11Z" transform="translate(-91.59 -12.53)"></path>                
+                <path class="cls-1" d="M237,660c-26-37.32-28.91-60-54-97.5a264.56,264.56,0,0,1-41.2-105c-4.08-25.71-12.91-79.84,14.22-96.64,22.66-14,43.53-5.07,57.93,29.2,10.24,24.37,6.76,129.44,28.55,129.44,15.68,0,1.85-23.57-7.61-160.84-5.71-82.81-10.94-110.76-6.19-156,6.47-61.6-2.85-128,42-125.72S315.35,147.66,312.72,206c-1.44,32-.13,100.19,31.78,93.3S383.21,226.52,384,182.9s39.26-46.65,50.25-10.93,22.65,125.72-6.17,168.18-84.86,28.3-85.68,73.15S360.52,649.16,347.2,662,237,660,237,660Z" transform="translate(-91.59 -12.53)"></path>
+                <g class="flower">
+                    
+                    <path class="cls-3" d="M506.1,180.71c-4.45-.09-19.64-2.74-34,.06,7.24-12.43,10-27.19,11.47-31.69-3.64,2.55-17.49,9.33-27.46,20-1.45-14.32-7.88-27.89-9.34-32.38-1.45,4.2-8.67,17.83-10.45,32.34-9.58-10.73-22.76-17.93-26.59-20.7,1.29,4.25,3.47,19.52,10.56,32.3-14.06-3-28.95-1.12-33.68-1.12,3.55,2.68,14.28,13.76,27.53,19.93-13.16,5.8-24.08,16.11-27.91,18.89,4.45.09,19.64,2.74,34-.06-7.24,12.44-10,27.2-11.47,31.69,3.64-2.54,17.49-9.33,27.46-20,1.45,14.31,7.88,27.88,9.34,32.37,1.46-4.2,8.67-17.82,10.45-32.34,9.58,10.73,22.76,17.93,26.59,20.7-1.3-4.25-3.47-19.52-10.56-32.3,14.06,3,29,1.12,33.68,1.12-3.54-2.68-14.28-13.76-27.53-19.93C491.35,193.8,502.28,183.49,506.1,180.71Zm-59.91,18.86h-.05v0h0v0Z" transform="translate(-91.59 -12.53)"></path>
+                    <circle class="cls-4" cx="354.99" cy="186.63" r="15.07"></circle>
+                </g>
+                
+                <g class="flower">
+                <path class="cls-3" d="M195.92,372.56c-3.86-.07-17.09-2.38-29.58.05,6.3-10.82,8.72-23.67,10-27.58-3.18,2.21-15.23,8.12-23.91,17.43-1.26-12.46-6.86-24.27-8.13-28.18-1.27,3.65-7.55,15.52-9.1,28.15-8.34-9.34-19.82-15.61-23.15-18,1.13,3.7,3,17,9.19,28.12-12.24-2.65-25.2-1-29.32-1,3.09,2.33,12.43,12,24,17.34-11.46,5.06-21,14-24.29,16.45,3.87.07,17.09,2.38,29.58-.05-6.3,10.82-8.71,23.67-10,27.58,3.17-2.21,15.23-8.12,23.9-17.43,1.27,12.46,6.86,24.28,8.14,28.19,1.26-3.66,7.54-15.52,9.09-28.15,8.34,9.33,19.82,15.6,23.15,18-1.13-3.71-3-17-9.19-28.12,12.24,2.64,25.2,1,29.32,1-3.09-2.34-12.43-12-24-17.35C183.09,384,192.6,375,195.92,372.56ZM143.78,389h-.05v0h.05v0Z" transform="translate(-91.59 -12.53)"></path>
+                <circle class="cls-4" cx="52.52" cy="376.1" r="13.12"></circle>
+            </g><g class="flower">
+                <path class="cls-3" d="M325.8,72.6c-6.06-.12-26.81-3.74-46.41.08,9.89-17,13.68-37.14,15.67-43.28-5,3.47-23.89,12.74-37.5,27.35-2-19.55-10.77-38.08-12.77-44.22-2,5.74-11.84,24.35-14.26,44.17-13.09-14.65-31.09-24.49-36.32-28.28,1.77,5.81,4.73,26.66,14.42,44.12-19.2-4.15-39.54-1.53-46-1.53,4.84,3.67,19.49,18.79,37.59,27.22-18,7.93-32.89,22-38.11,25.8,6.07.12,26.82,3.74,46.41-.08-9.88,17-13.67,37.14-15.66,43.28,5-3.48,23.89-12.74,37.5-27.35,2,19.54,10.76,38.08,12.76,44.22,2-5.74,11.84-24.35,14.27-44.17,13.09,14.65,31.09,24.48,36.31,28.27-1.76-5.81-4.73-26.66-14.42-44.11,19.21,4.15,39.55,1.53,46,1.52-4.84-3.66-19.5-18.78-37.59-27.21C305.67,90.47,320.59,76.39,325.8,72.6ZM244,98.35h-.06l0,0v0s0,0,0,0H244a0,0,0,0,0,0,0v.06Z" transform="translate(-91.59 -12.53)"></path>
+                <circle class="cls-4" cx="152.93" cy="85.27" r="20.58"></circle>
+            </g>
+            </svg>
+            
+        </div>
+    </section>
+    <section class="sponsor">
+        <h2>PROPOSTO DA</h2>
+        <div class="sponsor-list">
+            <img src="img/loghi/logo-orchestra.jpg" alt="">
+            <img src="img/loghi/logo-allinone.jpg" alt="">
+            <img src="img/loghi/logo-lou-tapage.jpg" alt="">
+        </div>
+        <h2>CON IL SUPPORTO DI</h2>
+        <div class="sponsor-list">
+            
+            <img src="img/loghi/logo-cuneo.jpg" alt="">
+        </div>
+        <h2>CON LA COLLABORAZIONE DI</h2>
+        <div class="sponsor-list">
+            
+            <img src="img/loghi/logo-caffe-sociale.jpg" alt="">
+            <img src="img/loghi/logo-targatocn.jpg" alt="">
+            <img src="img/loghi/logo-melarancio.jpg" alt="">
+        </div>
+    </section>
+
+    <section class="footer">
+        © 2020 - #SNVN - Stasera non viene nessuno
+        <div class="social">
+            <a href="https://www.facebook.com/Stasera-Non-Viene-Nessuno-109503880783508" target="_blank" rel="noopener noreferrer"><img src="img/facebook.svg" alt="Facebook"></a>
+            <a href="https://www.instagram.com/staseranonvienenessuno_/" target="_blank" rel="noopener noreferrer"><img src="img/instagram.svg" alt="Instagram"></a>
+            <a href="https://www.youtube.com/channel/UCRoKzBP9y8rmdcRSgY-0a5Q/" target="_blank" rel="noopener noreferrer"><img src="img/youtube.svg" alt="YouTube"></a>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script>
+        gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+
+        gsap.set('.flower', {
+            transformOrigin:"50% 50%",
+            scaleX:0,
+            scaleY:0,
+        });
+        gsap.to('.flower', {
+            scrollTrigger: {
+                start: '20% center',
+                end: 'bottom center',
+                trigger: 'section.secondary',
+                scrub: 1
+            },
+            rotation: 360,
+            transformOrigin:"50% 50%",
+            scaleX:1,
+            scaleY:1,
+            duration: 3
+        });
+
+        gsap.to('.sipario', {
+            scrollTrigger: {
+                trigger: '.intro',
+                start: 'top top',
+                end: '100% 90%',
+                scrub: 1,
+            },
+            translateY: '-100%',
+            duration: 3
+        });
+
+        var UTIL = (function(){
+            let util = {};
+
+            util.scrollTo = function() {
+                gsap.to(window, {duration: .3, scrollTo: '100'});
+            }
+
+            return util;
+        })();        
+
+        /*$(window).scroll(function() {
+        var theta = $(window).scrollTop() / 10 % Math.PI;
+            $('.flower').css({ transform: 'rotate(' + theta + 'rad)' });
+            $('.flower').css({ transform: 'rotate(-' + theta + 'rad)' });
+        });*/
+    </script>
+</body>
+</html>
