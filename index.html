@@ -33,6 +33,7 @@
     padding: 10px 15px;
     border-radius: 50px;
     font-family: 'Chivo', sans-serif;
+    font-weight: 900;
     font-size: 20px;
     color: #9ac1e7;
         }
@@ -78,7 +79,7 @@
 
 
         .intro {            
-            height: 100%;
+            min-height: 100%;
     background-color: #9ac1e7;
     display: flex;
     align-items: flex-end;
@@ -105,6 +106,7 @@
 
         h2,h5 {
             font-family: 'Chivo', sans-serif;
+            font-weight: 900;
         }
         .tag {
             font-family: 'Lemonism', cursive;
@@ -133,8 +135,26 @@
     text-align: right;
         }
 
-        .calendar li:not(:first-child) {
+        .calendar > li:not(:first-child) {
             margin-top: 15px;
+        }
+
+        ul.names {
+            list-style: none;
+            margin-top: 5px;
+            padding: 0;
+        }
+        ul.names li:first-child {
+            font-weight: 900;
+        }
+        ul.names li:not(:first-child) {            
+            font-size: 0.8em;
+        }
+        ul.names small {
+            margin-top: -5px;
+    position: relative;
+    display: block;
+    font-size: .8em;
         }
 
 
@@ -188,6 +208,7 @@ margin-top: 80px;
     background-color: #192a48;
     color: #e40053;
     font-family: 'Chivo', sans-serif;
+    font-weight: 900;
     text-align: center;
     font-size: 1em;
 }
@@ -298,7 +319,7 @@ margin-top: 80px;
 
 
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@700;900&display=swap" rel="stylesheet">
     <script src="/vendor/gsap/gsap.min.js"></script>
     <script src="/vendor/gsap/ScrollTrigger.min.js"></script>
     <script src="/vendor/gsap/ScrollToPlugin.min.js"></script>
@@ -343,19 +364,39 @@ margin-top: 80px;
         <ul class="calendar">
             <li>
                 <span class="date">15 GIUGNO 2020</span>
-                Lou Tapage
+                <ul class="names">
+                    <li>Lou Tapage</li>
+                    <li>Gimmy Basilotta</li>
+                    <li>Samuele Corrado<br><small>Lavoratori e lavoratrici dello spettacolo Piemonte</small></li>
+                    <li>Marco Los<br><small>Cuneo Comedy Night</small></li>
+                </ul>
             </li>
             <li>
                 <span class="date">22 GIUGNO 2020</span>
-                Magasin du cafè
+                <ul class="names">
+                    <li>Radio Ravot</li>
+                    <li>Francesca Monte</li>
+                    <li>Roberto Punzi<br><small>Tecnico e produttore teatrale</small></li>
+                    <li>Pippo Ricciardi<br><small>Torino Lounge Comedy</small></li>
+                </ul>
             </li>
             <li>
                 <span class="date">29 GIUGNO 2020</span>
-                Radio Ravot
+                <ul class="names">
+                    <li>Mezz'ora Canonica</li>
+                    <li>Claudia Ferrari</li>
+                    <li>Guido Costamagna<br><small>Big Talu Music Service</small></li>
+                    <li>Antonio Piazza<br><small>Torino Lounge Comedy</small></li>
+                </ul>
             </li>
             <li>
                 <span class="date">06 LUGLIO 2020</span>
-                L'ora canonica
+                <ul class="names">
+                    <li>Magasin du Cafè</li>
+                    <li>Elide Giordanengo</li>
+                    <li>Riccardo Parravicini<br><small>Tecnico del suono</small></li>
+                    <li>Emanuele Tumolo<br><small>Torino Lounge Comedy</small></li>
+                </ul>
             </li>
         </ul>
         <div class="video-container">
