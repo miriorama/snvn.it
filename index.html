@@ -36,7 +36,14 @@
     font-weight: 900;
     font-size: 20px;
     color: #9ac1e7;
+    text-decoration: none;
         }
+        a.btn.outline {
+    border: 2px solid #e40053;
+    background-color: transparent;
+    color: #e40053;
+    font-weight: 700;
+}
 
         @font-face {
   font-family: "Lemonism";
@@ -227,9 +234,38 @@ margin-top: 80px;
     cursor: pointer;
 }
 
+.sponsor-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.sponsor img {
+    margin-bottom: 20px;
+}
+
 
 .scroll-down {
     text-align: center;
+}
+
+.pulse {
+    box-shadow: 0 0 0 rgba(228, 0, 83, 0.6);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(228, 0, 83, 0.6);
+    box-shadow: 0 0 0 0 rgba(228, 0, 83, 0.6);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 20px rgba(228, 0, 83, 0);
+      box-shadow: 0 0 0 20px rgba(228, 0, 83, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(228, 0, 83, 0);
+      box-shadow: 0 0 0 0 rgba(228, 0, 83, 0);
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -357,7 +393,8 @@ margin-top: 80px;
                 <a href="https://www.youtube.com/channel/UCRoKzBP9y8rmdcRSgY-0a5Q/" target="_blank" rel="noopener noreferrer"><img src="img/youtube.svg" alt="YouTube"></a>
             </div>
             <br>
-            <a onclick="UTIL.scrollTo('.secondary');" class="btn">SCOPRI IL PROGRAMMA</a>
+            <a onclick="UTIL.scrollTo('.secondary');" target="_blank" rel="noopener noreferrer" class="btn outline">SCOPRI IL PROGRAMMA</a>
+            <br><a style="margin-top: 20px;" href="https://www.youtube.com/watch?v=3uP_kypToLo" class="btn pulse">GUARDA LA DIRETTA</a>
         </header>
     </section>
     <section class="secondary">
@@ -443,7 +480,8 @@ margin-top: 80px;
         </div>
         <h2>CON LA COLLABORAZIONE DI</h2>
         <div class="sponsor-list">
-            
+            <img src="img/loghi/logo-fondazione-crc.jpg" alt="">
+            <img src="img/loghi/logo-varco.jpg" alt="">            
             <img src="img/loghi/logo-caffe-sociale.jpg" alt="">
             <img src="img/loghi/logo-targatocn.jpg" alt="">
             <img src="img/loghi/logo-melarancio.jpg" alt="">
