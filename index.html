@@ -45,6 +45,18 @@
     font-weight: 700;
 }
 
+.btn-tag {
+    font-family: 'Lemonism', cursive;
+    padding: 1px 10px 10px;
+    transform: rotate(-7deg);
+    display: inline-block;
+    margin-right: 10px;
+    background-color: #ea1c5e;
+    color: #f9c29d;
+    cursor: pointer;
+    text-decoration: none;
+}
+
         @font-face {
   font-family: "Lemonism";
   src: url("vendor/lemonism/lemonism.otf");
@@ -130,7 +142,7 @@
         .date {
             color: #e40053;
             font-family: 'Lemonism', cursive;
-            display: block;
+            display: inline-block;
             font-size: 1.4em;
         }
 
@@ -394,13 +406,13 @@ margin-top: 80px;
             </div>
             <br>
             <a onclick="UTIL.scrollTo('.secondary');" target="_blank" rel="noopener noreferrer" class="btn outline">SCOPRI IL PROGRAMMA</a>
-            <br><a style="margin-top: 20px;" href="https://www.youtube.com/watch?v=3uP_kypToLo" class="btn pulse">GUARDA LA DIRETTA</a>
+            <br><a style="margin-top: 20px;" href="https://youtu.be/1968xPJ_UgI" target="_blank" class="btn pulse">GUARDA LA DIRETTA</a>
         </header>
     </section>
     <section class="secondary">
         <ul class="calendar">
             <li>
-                <span class="date">15 GIUGNO 2020</span>
+                <a href="https://www.youtube.com/watch?v=3uP_kypToLo" target="_blank" class="btn-tag">RIVEDI</a><span class="date">15 GIUGNO 2020</span>
                 <ul class="names">
                     <li>Lou Tapage</li>
                     <li>Gimmy Basilotta</li>
@@ -409,7 +421,7 @@ margin-top: 80px;
                 </ul>
             </li>
             <li>
-                <span class="date">22 GIUGNO 2020</span>
+                <a href="https://youtu.be/1968xPJ_UgI" target="_blank" class="btn-tag">GUARDA IN DIRETTA</a><span class="date">22 GIUGNO 2020</span>
                 <ul class="names">
                     <li>Radio Ravot</li>
                     <li>Francesca Monte</li>
@@ -437,7 +449,7 @@ margin-top: 80px;
             </li>
         </ul>
         <div class="video-container">
-            <a href="https://www.youtube.com/watch?v=3uP_kypToLo" target="_blank" rel="noopener noreferrer"><img src="img/video-cover-play.jpg?1" style="display:inline-block; width:100%;" alt=""></a>
+            <a href="https://www.youtube.com/watch?v=1968xPJ_UgI" target="_blank" rel="noopener noreferrer"><img src="img/video-cover-play.jpg?'2'" style="display:inline-block; width:100%;" alt=""></a>
             <svg id="Livello_1" class="cactus" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 414.51 813.41">
                 <defs>
                     <style>
