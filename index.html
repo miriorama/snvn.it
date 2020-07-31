@@ -94,6 +94,7 @@
         }
 
         .sipario-bkg {
+            position: absolute;
             width:100%;background-color: #192a48;
             height: 100%;
             color: white;
@@ -147,6 +148,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
         }
         .date {
             color: #e40053;
@@ -160,12 +162,22 @@
     color: #192a48;
     font-size: 1.5em;
     list-style: none;
-    text-align: right;
+    text-align: center;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
         }
 
-        .calendar > li:not(:first-child) {
+        .calendar>li {
+    margin-right: 20px;
+    margin-top: 60px;
+    width: 280px;
+}
+
+        /* .calendar > li:not(:first-child) {
             margin-top: 15px;
-        }
+        } */
 
         ul.names {
             list-style: none;
@@ -416,7 +428,7 @@ margin-top: 80px;
                 <svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
             </a>
         </div>
-        <img src="img/sipario.svg" alt="">
+        <img src="img/sipario.svg" style="    background-color: #9ac1e7;        z-index: 130;        position: absolute;        bottom: 0;" alt="Sipario">
     </div>
 
     
@@ -435,11 +447,44 @@ margin-top: 80px;
                 <a href="https://www.youtube.com/channel/UCRoKzBP9y8rmdcRSgY-0a5Q/" target="_blank" rel="noopener noreferrer"><img src="img/youtube.svg" alt="YouTube"></a>
             </div>
             <br>
-            <a onclick="UTIL.scrollTo('.secondary');" target="_blank" rel="noopener noreferrer" class="btn outline">SCOPRI IL PROGRAMMA</a>
-            <br><a style="margin-top: 20px;" href="https://youtu.be/6Y-BINEaFWo" target="_blank" rel="noopener noreferrer" class="btn pulse">GUARDA LA DIRETTA</a>
+            <a onclick="UTIL.scrollTo('.calendar');" target="_blank" rel="noopener noreferrer" class="btn outline">SCOPRI IL PROGRAMMA</a>
+            <br><a style="margin-top: 20px;" onclick="UTIL.scrollTo('.calendar');" target="_blank" rel="noopener noreferrer" class="btn pulse">RIVEDI LE PUNTATE</a>
         </header>
     </section>
     <section class="secondary">
+        <div class="video-container">
+            <a href="https://www.youtube.com/watch?v=YvTb8iOCxEI" target="_blank" rel="noopener noreferrer">
+                <img src="img/video-cover-play.jpg?7" style="display:inline-block; width:100%;" alt="Guarda la diretta">
+                <div class="play-bkg"></div>
+                <div class="play-icon" style="background-image: url(img/play-icon.png);width: 100%;height: 100%;background-repeat: no-repeat;background-position: center;position: absolute;top: 0;right: 0;"></div>
+            </a>
+            <svg id="Livello_1" class="cactus" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 414.51 813.41">
+                <defs>
+                    <style>
+                        .cls-1{fill:#118ab2;}.cls-2{fill:#ea1c5e;}.cls-3{fill:#b5ad4a;}.cls-4{fill:#fbbc97;}
+                    </style>
+                </defs>
+                <title>
+                    cactus-fiorito
+                </title>
+                <path class="cls-2" d="M226.25,825.11c-4.14-16.59-76.88-142-65.54-162.6s18.82-33.64,65.54-31.77,177.55-7.48,190.64,13.08-28,179.42-33.64,181.29S226.25,825.11,226.25,825.11Z" transform="translate(-91.59 -12.53)"></path>                
+                <path class="cls-1" d="M237,660c-26-37.32-28.91-60-54-97.5a264.56,264.56,0,0,1-41.2-105c-4.08-25.71-12.91-79.84,14.22-96.64,22.66-14,43.53-5.07,57.93,29.2,10.24,24.37,6.76,129.44,28.55,129.44,15.68,0,1.85-23.57-7.61-160.84-5.71-82.81-10.94-110.76-6.19-156,6.47-61.6-2.85-128,42-125.72S315.35,147.66,312.72,206c-1.44,32-.13,100.19,31.78,93.3S383.21,226.52,384,182.9s39.26-46.65,50.25-10.93,22.65,125.72-6.17,168.18-84.86,28.3-85.68,73.15S360.52,649.16,347.2,662,237,660,237,660Z" transform="translate(-91.59 -12.53)"></path>
+                <g class="flower">
+                    
+                    <path class="cls-3" d="M506.1,180.71c-4.45-.09-19.64-2.74-34,.06,7.24-12.43,10-27.19,11.47-31.69-3.64,2.55-17.49,9.33-27.46,20-1.45-14.32-7.88-27.89-9.34-32.38-1.45,4.2-8.67,17.83-10.45,32.34-9.58-10.73-22.76-17.93-26.59-20.7,1.29,4.25,3.47,19.52,10.56,32.3-14.06-3-28.95-1.12-33.68-1.12,3.55,2.68,14.28,13.76,27.53,19.93-13.16,5.8-24.08,16.11-27.91,18.89,4.45.09,19.64,2.74,34-.06-7.24,12.44-10,27.2-11.47,31.69,3.64-2.54,17.49-9.33,27.46-20,1.45,14.31,7.88,27.88,9.34,32.37,1.46-4.2,8.67-17.82,10.45-32.34,9.58,10.73,22.76,17.93,26.59,20.7-1.3-4.25-3.47-19.52-10.56-32.3,14.06,3,29,1.12,33.68,1.12-3.54-2.68-14.28-13.76-27.53-19.93C491.35,193.8,502.28,183.49,506.1,180.71Zm-59.91,18.86h-.05v0h0v0Z" transform="translate(-91.59 -12.53)"></path>
+                    <circle class="cls-4" cx="354.99" cy="186.63" r="15.07"></circle>
+                </g>
+                
+                <g class="flower">
+                <path class="cls-3" d="M195.92,372.56c-3.86-.07-17.09-2.38-29.58.05,6.3-10.82,8.72-23.67,10-27.58-3.18,2.21-15.23,8.12-23.91,17.43-1.26-12.46-6.86-24.27-8.13-28.18-1.27,3.65-7.55,15.52-9.1,28.15-8.34-9.34-19.82-15.61-23.15-18,1.13,3.7,3,17,9.19,28.12-12.24-2.65-25.2-1-29.32-1,3.09,2.33,12.43,12,24,17.34-11.46,5.06-21,14-24.29,16.45,3.87.07,17.09,2.38,29.58-.05-6.3,10.82-8.71,23.67-10,27.58,3.17-2.21,15.23-8.12,23.9-17.43,1.27,12.46,6.86,24.28,8.14,28.19,1.26-3.66,7.54-15.52,9.09-28.15,8.34,9.33,19.82,15.6,23.15,18-1.13-3.71-3-17-9.19-28.12,12.24,2.64,25.2,1,29.32,1-3.09-2.34-12.43-12-24-17.35C183.09,384,192.6,375,195.92,372.56ZM143.78,389h-.05v0h.05v0Z" transform="translate(-91.59 -12.53)"></path>
+                <circle class="cls-4" cx="52.52" cy="376.1" r="13.12"></circle>
+            </g><g class="flower">
+                <path class="cls-3" d="M325.8,72.6c-6.06-.12-26.81-3.74-46.41.08,9.89-17,13.68-37.14,15.67-43.28-5,3.47-23.89,12.74-37.5,27.35-2-19.55-10.77-38.08-12.77-44.22-2,5.74-11.84,24.35-14.26,44.17-13.09-14.65-31.09-24.49-36.32-28.28,1.77,5.81,4.73,26.66,14.42,44.12-19.2-4.15-39.54-1.53-46-1.53,4.84,3.67,19.49,18.79,37.59,27.22-18,7.93-32.89,22-38.11,25.8,6.07.12,26.82,3.74,46.41-.08-9.88,17-13.67,37.14-15.66,43.28,5-3.48,23.89-12.74,37.5-27.35,2,19.54,10.76,38.08,12.76,44.22,2-5.74,11.84-24.35,14.27-44.17,13.09,14.65,31.09,24.48,36.31,28.27-1.76-5.81-4.73-26.66-14.42-44.11,19.21,4.15,39.55,1.53,46,1.52-4.84-3.66-19.5-18.78-37.59-27.21C305.67,90.47,320.59,76.39,325.8,72.6ZM244,98.35h-.06l0,0v0s0,0,0,0H244a0,0,0,0,0,0,0v.06Z" transform="translate(-91.59 -12.53)"></path>
+                <circle class="cls-4" cx="152.93" cy="85.27" r="20.58"></circle>
+            </g>
+            </svg>
+            
+        </div>
         <ul class="calendar">
             <li>
                 <a href="https://www.youtube.com/watch?v=3uP_kypToLo" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a><span class="date">15 GIUGNO 2020</span>
@@ -484,13 +529,13 @@ margin-top: 80px;
                 <a href="https://youtu.be/D2IPKWLxYQE" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
                 <span class="date">13 LUGLIO 2020</span>
                 <ul class="names">
-                    <li>Emanuele Via & Charlie T</li>
+                    <li>Emanuele Via <br>& Charlie T</li>
                     <li>Magalì Berardo<br><small>Musicalista - Agenzia di booking internazionale</small></li>
                     <li>Roberto Zuino e Gabriele Girondi<br><small>Teatro Sequenza</small></li>
                 </ul>
             </li>
 	        <li>
-                <a href="https://youtu.be/6Y-BINEaFWo" target="_blank" rel="noopener noreferrer" class="btn-tag">GUARDA IN DIRETTA</a>
+                <a href="https://youtu.be/6Y-BINEaFWo" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
                 <span class="date">20 LUGLIO 2020</span>
                 <ul class="names">
                     <li>Zibba<br><small>Cantautore</small></li>
@@ -498,40 +543,17 @@ margin-top: 80px;
                     <li>Richi Selva<br><small>Stand Up Comedy</small></li>
                 </ul>
             </li>
+            <li>
+                <a href="https://youtu.be/YvTb8iOCxEI" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
+                <span class="date">27 LUGLIO 2020</span>
+                <ul class="names">
+                    <li>Cacao Mental<br><small>Elektro Cumbia Psicodelica</small></li>
+                    <li>Annarita Masullo<br><small>Direttore di produzione presso The Goodness Factory</small></li>
+                    <li>Marta Tortia<br><small>Violinista del Teatro Regio di Torino</small></li>
+                    <li>Carlo Joly<br><small>Comico</small></li>
+                </ul>
+            </li>
         </ul>
-        <div class="video-container">
-            <a href="https://www.youtube.com/watch?v=6Y-BINEaFWo" target="_blank" rel="noopener noreferrer">
-                <img src="img/video-cover-play.jpg?6" style="display:inline-block; width:100%;" alt="Guarda la diretta">
-                <div class="play-bkg"></div>
-                <div class="play-icon" style="background-image: url(img/play-icon.png);width: 100%;height: 100%;background-repeat: no-repeat;background-position: center;position: absolute;top: 0;right: 0;"></div>
-            </a>
-            <svg id="Livello_1" class="cactus" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 414.51 813.41">
-                <defs>
-                    <style>
-                        .cls-1{fill:#118ab2;}.cls-2{fill:#ea1c5e;}.cls-3{fill:#b5ad4a;}.cls-4{fill:#fbbc97;}
-                    </style>
-                </defs>
-                <title>
-                    cactus-fiorito
-                </title>
-                <path class="cls-2" d="M226.25,825.11c-4.14-16.59-76.88-142-65.54-162.6s18.82-33.64,65.54-31.77,177.55-7.48,190.64,13.08-28,179.42-33.64,181.29S226.25,825.11,226.25,825.11Z" transform="translate(-91.59 -12.53)"></path>                
-                <path class="cls-1" d="M237,660c-26-37.32-28.91-60-54-97.5a264.56,264.56,0,0,1-41.2-105c-4.08-25.71-12.91-79.84,14.22-96.64,22.66-14,43.53-5.07,57.93,29.2,10.24,24.37,6.76,129.44,28.55,129.44,15.68,0,1.85-23.57-7.61-160.84-5.71-82.81-10.94-110.76-6.19-156,6.47-61.6-2.85-128,42-125.72S315.35,147.66,312.72,206c-1.44,32-.13,100.19,31.78,93.3S383.21,226.52,384,182.9s39.26-46.65,50.25-10.93,22.65,125.72-6.17,168.18-84.86,28.3-85.68,73.15S360.52,649.16,347.2,662,237,660,237,660Z" transform="translate(-91.59 -12.53)"></path>
-                <g class="flower">
-                    
-                    <path class="cls-3" d="M506.1,180.71c-4.45-.09-19.64-2.74-34,.06,7.24-12.43,10-27.19,11.47-31.69-3.64,2.55-17.49,9.33-27.46,20-1.45-14.32-7.88-27.89-9.34-32.38-1.45,4.2-8.67,17.83-10.45,32.34-9.58-10.73-22.76-17.93-26.59-20.7,1.29,4.25,3.47,19.52,10.56,32.3-14.06-3-28.95-1.12-33.68-1.12,3.55,2.68,14.28,13.76,27.53,19.93-13.16,5.8-24.08,16.11-27.91,18.89,4.45.09,19.64,2.74,34-.06-7.24,12.44-10,27.2-11.47,31.69,3.64-2.54,17.49-9.33,27.46-20,1.45,14.31,7.88,27.88,9.34,32.37,1.46-4.2,8.67-17.82,10.45-32.34,9.58,10.73,22.76,17.93,26.59,20.7-1.3-4.25-3.47-19.52-10.56-32.3,14.06,3,29,1.12,33.68,1.12-3.54-2.68-14.28-13.76-27.53-19.93C491.35,193.8,502.28,183.49,506.1,180.71Zm-59.91,18.86h-.05v0h0v0Z" transform="translate(-91.59 -12.53)"></path>
-                    <circle class="cls-4" cx="354.99" cy="186.63" r="15.07"></circle>
-                </g>
-                
-                <g class="flower">
-                <path class="cls-3" d="M195.92,372.56c-3.86-.07-17.09-2.38-29.58.05,6.3-10.82,8.72-23.67,10-27.58-3.18,2.21-15.23,8.12-23.91,17.43-1.26-12.46-6.86-24.27-8.13-28.18-1.27,3.65-7.55,15.52-9.1,28.15-8.34-9.34-19.82-15.61-23.15-18,1.13,3.7,3,17,9.19,28.12-12.24-2.65-25.2-1-29.32-1,3.09,2.33,12.43,12,24,17.34-11.46,5.06-21,14-24.29,16.45,3.87.07,17.09,2.38,29.58-.05-6.3,10.82-8.71,23.67-10,27.58,3.17-2.21,15.23-8.12,23.9-17.43,1.27,12.46,6.86,24.28,8.14,28.19,1.26-3.66,7.54-15.52,9.09-28.15,8.34,9.33,19.82,15.6,23.15,18-1.13-3.71-3-17-9.19-28.12,12.24,2.64,25.2,1,29.32,1-3.09-2.34-12.43-12-24-17.35C183.09,384,192.6,375,195.92,372.56ZM143.78,389h-.05v0h.05v0Z" transform="translate(-91.59 -12.53)"></path>
-                <circle class="cls-4" cx="52.52" cy="376.1" r="13.12"></circle>
-            </g><g class="flower">
-                <path class="cls-3" d="M325.8,72.6c-6.06-.12-26.81-3.74-46.41.08,9.89-17,13.68-37.14,15.67-43.28-5,3.47-23.89,12.74-37.5,27.35-2-19.55-10.77-38.08-12.77-44.22-2,5.74-11.84,24.35-14.26,44.17-13.09-14.65-31.09-24.49-36.32-28.28,1.77,5.81,4.73,26.66,14.42,44.12-19.2-4.15-39.54-1.53-46-1.53,4.84,3.67,19.49,18.79,37.59,27.22-18,7.93-32.89,22-38.11,25.8,6.07.12,26.82,3.74,46.41-.08-9.88,17-13.67,37.14-15.66,43.28,5-3.48,23.89-12.74,37.5-27.35,2,19.54,10.76,38.08,12.76,44.22,2-5.74,11.84-24.35,14.27-44.17,13.09,14.65,31.09,24.48,36.31,28.27-1.76-5.81-4.73-26.66-14.42-44.11,19.21,4.15,39.55,1.53,46,1.52-4.84-3.66-19.5-18.78-37.59-27.21C305.67,90.47,320.59,76.39,325.8,72.6ZM244,98.35h-.06l0,0v0s0,0,0,0H244a0,0,0,0,0,0,0v.06Z" transform="translate(-91.59 -12.53)"></path>
-                <circle class="cls-4" cx="152.93" cy="85.27" r="20.58"></circle>
-            </g>
-            </svg>
-            
-        </div>
     </section>
     <section class="sponsor">
         <h2>PROPOSTO DA</h2>
