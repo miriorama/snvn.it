@@ -24,7 +24,7 @@
         }
         html, body {
             margin: 0;
-            height: 100%;
+            min-height: 100%;
         }
         a {
             cursor: pointer;
@@ -38,7 +38,7 @@
     font-family: 'Chivo', sans-serif;
     font-weight: 900;
     font-size: 20px;
-    color: #9ac1e7;
+    color: #2A603E;
     text-decoration: none;
         }
         a.btn.outline {
@@ -58,6 +58,13 @@
     color: #f9c29d;
     cursor: pointer;
     text-decoration: none;
+}
+
+[disabled] {
+    pointer-events: none;
+    border-color: #b5b5b5 !important;
+    color: #b5b5b5 !important;
+    opacity: .5;
 }
 
         @font-face {
@@ -85,12 +92,12 @@
 
         .sipario {
     width: 100%;
-    height: 100%;
+    height: 40vh;
     z-index: 10;
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: #9ac1e7;
+    background-color: #2A603E;
         }
 
         .sipario-bkg {
@@ -108,8 +115,8 @@
 
 
         .intro {            
-            min-height: 100%;
-    background-color: #9ac1e7;
+            /*min-height: 100%;*/
+    background-color: #2A603E;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -131,6 +138,13 @@
         }
         header h5,header h2 {
             margin:0;
+        }
+
+        header h2 {
+            margin: 10px 0 0;
+            text-shadow: 0px -3px 0px #fdf7f7, 1px 0px 0px #fdf7f7, 1px -3px 0px #fdf7f7;
+            font-family: 'Lemonism', cursive;
+            font-size: 5rem;
         }
 
         h2,h5 {
@@ -296,6 +310,7 @@ margin-top: 80px;
 
 .scroll-down {
     text-align: center;
+    line-height: 25px;
 }
 
 .pulse {
@@ -334,6 +349,10 @@ margin-top: 80px;
     font-size: 0.6em;
   }
 
+  .intro h2 {
+      margin: 0 20px;
+  }
+
   .intro header {
     text-align: center;
     padding: 0;
@@ -348,7 +367,7 @@ margin-top: 80px;
     }
     .poltrona {
     width: calc(100% - 80px);
-    padding: 0 40px;
+    padding: 0;
     margin: 0;
     }
 
@@ -392,6 +411,10 @@ margin-top: 80px;
         margin-right: 0 !important;
     }
 
+    .sipario {
+        height: 60vh;
+    }
+
     .sipario .sponsor-list {
         margin-top: -100px;
     }
@@ -423,38 +446,38 @@ margin-top: 80px;
                 <img src="img/loghi/logo-lou-tapage-negative.jpg" alt="">
             </div>
             
-            <a class="scroll-down" onclick="UTIL.scrollTo(document.body.clientHeight);">
+            <a class="scroll-down" onclick="UTIL.scrollTo('.intro');">
                 <div style="    margin-top: 40px;">presentano</div>
                 <svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
             </a>
         </div>
-        <img src="img/sipario.svg" style="    background-color: #9ac1e7;        z-index: 130;        position: absolute;        bottom: 0;" alt="Sipario">
+        <img src="img/sipario.svg" style="    background-color: #2A603E;        z-index: 130;        position: absolute;        bottom: 0;" alt="Sipario">
     </div>
 
     
     <!--<section style="background: url('img/teatro.png')"></section>-->
     <section class="intro">
         <div class="poltrona">
-            <img src="img/poltrona.svg" alt="Stasera non viene nessuno">
+            <img src="img/logo-natale.png" alt="Stasera non viene nessuno">
         </div>
         <header>
             <span class="tag">#SNVN</span>
-            <h2>Spettacolo live <br>in diretta streaming</h2>
-            <h5>Ogni lunedì dalle 21.15</h5>
+            <h2>Puntata <small>di</small> natale<br><small>in</small> diretta streaming</h2>
+            <h5>25 DICEMBRE 2020 ore 21.15</h5>
             <div class="social">
                 <a href="https://www.facebook.com/Stasera-Non-Viene-Nessuno-109503880783508" target="_blank" rel="noopener noreferrer"><img src="img/facebook.svg" alt="Facebook"></a>
                 <a href="https://www.instagram.com/staseranonvienenessuno_/" target="_blank" rel="noopener noreferrer"><img src="img/instagram.svg" alt="Instagram"></a>
                 <a href="https://www.youtube.com/channel/UCRoKzBP9y8rmdcRSgY-0a5Q/" target="_blank" rel="noopener noreferrer"><img src="img/youtube.svg" alt="YouTube"></a>
             </div>
             <br>
-            <a onclick="UTIL.scrollTo('.calendar');" target="_blank" rel="noopener noreferrer" class="btn outline">SCOPRI IL PROGRAMMA</a>
+            <a disabled target="_blank" rel="noopener noreferrer" class="btn outline">GUARDA LA DIRETTA</a>
             <br><a style="margin-top: 20px;" onclick="UTIL.scrollTo('.calendar');" target="_blank" rel="noopener noreferrer" class="btn pulse">RIVEDI LE PUNTATE</a>
         </header>
     </section>
     <section class="secondary">
         <div class="video-container">
-            <a href="https://www.youtube.com/watch?v=YvTb8iOCxEI" target="_blank" rel="noopener noreferrer">
-                <img src="img/video-cover-play.jpg?7" style="display:inline-block; width:100%;" alt="Guarda la diretta">
+            <a target="_blank" rel="noopener noreferrer">
+                <img src="img/video-cover-play-natale.jpg?7" style="display:inline-block; width:100%;" alt="Guarda la diretta">
                 <div class="play-bkg"></div>
                 <div class="play-icon" style="background-image: url(img/play-icon.png);width: 100%;height: 100%;background-repeat: no-repeat;background-position: center;position: absolute;top: 0;right: 0;"></div>
             </a>
@@ -487,32 +510,31 @@ margin-top: 80px;
         </div>
         <ul class="calendar">
             <li>
-                <a href="https://www.youtube.com/watch?v=3uP_kypToLo" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a><span class="date">15 GIUGNO 2020</span>
+                <a href="https://youtu.be/YvTb8iOCxEI" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
+                <span class="date">27 LUGLIO 2020</span>
                 <ul class="names">
-                    <li>Lou Tapage</li>
-                    <li>Gimmy Basilotta</li>
-                    <li>Samuele Corrado<br><small>Lavoratori e lavoratrici dello spettacolo Piemonte</small></li>
-                    <li>Marco Los<br><small>Cuneo Comedy Night</small></li>
+                    <li>Cacao Mental<br><small>Elektro Cumbia Psicodelica</small></li>
+                    <li>Annarita Masullo<br><small>Direttore di produzione presso The Goodness Factory</small></li>
+                    <li>Marta Tortia<br><small>Violinista del Teatro Regio di Torino</small></li>
+                    <li>Carlo Joly<br><small>Comico</small></li>
+                </ul>
+            </li>
+	        <li>
+                <a href="https://youtu.be/6Y-BINEaFWo" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
+                <span class="date">20 LUGLIO 2020</span>
+                <ul class="names">
+                    <li>Zibba<br><small>Cantautore</small></li>
+                    <li>Balla coi cinghiali<br><small>Festival indipendente</small></li>
+                    <li>Richi Selva<br><small>Stand Up Comedy</small></li>
                 </ul>
             </li>
             <li>
-                <a href="https://youtu.be/1968xPJ_UgI" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
-                <span class="date">22 GIUGNO 2020</span>
+                <a href="https://youtu.be/D2IPKWLxYQE" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
+                <span class="date">13 LUGLIO 2020</span>
                 <ul class="names">
-                    <li>Radio Ravot</li>
-                    <li>Francesca Monte</li>
-                    <li>Roberto Punzi<br><small>Tecnico e produttore teatrale</small></li>
-                    <li>Pippo Ricciardi<br><small>Torino Lounge Comedy</small></li>
-                </ul>
-            </li>
-            <li>
-                <a href="https://youtu.be/tiVu7m7l3Qw" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
-                <span class="date">29 GIUGNO 2020</span>
-                <ul class="names">
-                    <li>Mezz'ora Canonica</li>
-                    <li>Claudia Ferrari</li>
-                    <li>Guido Costamagna<br><small>Big Talu Music Service</small></li>
-                    <li>Antonio Piazza<br><small>Torino Lounge Comedy</small></li>
+                    <li>Emanuele Via <br>& Charlie T</li>
+                    <li>Magalì Berardo<br><small>Musicalista - Agenzia di booking internazionale</small></li>
+                    <li>Roberto Zuino e Gabriele Girondi<br><small>Teatro Sequenza</small></li>
                 </ul>
             </li>
             <li>
@@ -526,31 +548,32 @@ margin-top: 80px;
                 </ul>
             </li>
             <li>
-                <a href="https://youtu.be/D2IPKWLxYQE" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
-                <span class="date">13 LUGLIO 2020</span>
+                <a href="https://youtu.be/tiVu7m7l3Qw" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
+                <span class="date">29 GIUGNO 2020</span>
                 <ul class="names">
-                    <li>Emanuele Via <br>& Charlie T</li>
-                    <li>Magalì Berardo<br><small>Musicalista - Agenzia di booking internazionale</small></li>
-                    <li>Roberto Zuino e Gabriele Girondi<br><small>Teatro Sequenza</small></li>
-                </ul>
-            </li>
-	        <li>
-                <a href="https://youtu.be/6Y-BINEaFWo" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
-                <span class="date">20 LUGLIO 2020</span>
-                <ul class="names">
-                    <li>Zibba<br><small>Cantautore</small></li>
-                    <li>Balla coi cinghiali<br><small>Festival indipendente</small></li>
-                    <li>Richi Selva<br><small>Stand Up Comedy</small></li>
+                    <li>Mezz'ora Canonica</li>
+                    <li>Claudia Ferrari</li>
+                    <li>Guido Costamagna<br><small>Big Talu Music Service</small></li>
+                    <li>Antonio Piazza<br><small>Torino Lounge Comedy</small></li>
                 </ul>
             </li>
             <li>
-                <a href="https://youtu.be/YvTb8iOCxEI" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
-                <span class="date">27 LUGLIO 2020</span>
+                <a href="https://youtu.be/1968xPJ_UgI" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
+                <span class="date">22 GIUGNO 2020</span>
                 <ul class="names">
-                    <li>Cacao Mental<br><small>Elektro Cumbia Psicodelica</small></li>
-                    <li>Annarita Masullo<br><small>Direttore di produzione presso The Goodness Factory</small></li>
-                    <li>Marta Tortia<br><small>Violinista del Teatro Regio di Torino</small></li>
-                    <li>Carlo Joly<br><small>Comico</small></li>
+                    <li>Radio Ravot</li>
+                    <li>Francesca Monte</li>
+                    <li>Roberto Punzi<br><small>Tecnico e produttore teatrale</small></li>
+                    <li>Pippo Ricciardi<br><small>Torino Lounge Comedy</small></li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/watch?v=3uP_kypToLo" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a><span class="date">15 GIUGNO 2020</span>
+                <ul class="names">
+                    <li>Lou Tapage</li>
+                    <li>Gimmy Basilotta</li>
+                    <li>Samuele Corrado<br><small>Lavoratori e lavoratrici dello spettacolo Piemonte</small></li>
+                    <li>Marco Los<br><small>Cuneo Comedy Night</small></li>
                 </ul>
             </li>
         </ul>
@@ -602,7 +625,7 @@ margin-top: 80px;
         });
         gsap.to('.flower', {
             scrollTrigger: {
-                start: '20% center',
+                start: '-50% center',
                 end: 'bottom center',
                 trigger: 'section.secondary',
                 scrub: 1
