@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>#SNVN - Stasera non viene nessuno</title>
-    <meta name="description" content="Spettacolo live in diretta streaming. Ogni maledetto lunedì dalle 21.15.">
+    <meta name="description" content="Stasera Non Viene Nessuno è lo spettacolo dal vivo in live streaming ideato e prodotto da un collettivo di musicisti, attori e operatori dello spettacolo durante il lockdown.">
 
     <link rel="icon" type="image/png" href="img/favicon-cactus.png" >
     
@@ -12,434 +12,19 @@
     <meta name="application-name" content="#SNVN - Stasera non viene nessuno" />
 
     <meta property="og:title" content="#SNVN - Stasera non viene nessuno" />
-    <meta property="og:description" content="Spettacolo live in diretta streaming. Ogni lunedì dalle 21.15." />
-    <meta property="og:image" content="https://staseranonvienenessuno.it/img/cover-natale.jpg" />
+    <meta property="og:description" content="Stasera Non Viene Nessuno è lo spettacolo dal vivo in live streaming ideato e prodotto da un collettivo di musicisti, attori e operatori dello spettacolo durante il lockdown." />
+    <meta property="og:image" content="https://staseranonvienenessuno.it/img/cover.jpg?v=2" />
     <meta property="og:url" content="https://staseranonvienenessuno.it/" />
     <meta property="og:site_name" content="#SNVN - Stasera non viene nessuno" />
     <meta property="og:type" content="website" />
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        html, body {
-            margin: 0;
-            min-height: 100%;
-        }
-        a {
-            cursor: pointer;
-        }
+    <link href="vendor/tiny-slider/tiny-slider.css?v=2" rel="stylesheet">
+    <link href="style.css?v=2" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;700;900&display=swap" rel="stylesheet">
 
-        .btn {
-            background-color:#e40053 ;
-    display: inline-block;
-    padding: 10px 15px;
-    border-radius: 50px;
-    font-family: 'Chivo', sans-serif;
-    font-weight: 900;
-    font-size: 20px;
-    color: #2A603E;
-    text-decoration: none;
-        }
-        a.btn.outline {
-    border: 2px solid #e40053;
-    background-color: transparent;
-    color: #e40053;
-    font-weight: 700;
-}
-
-.btn-tag {
-    font-family: 'Lemonism', cursive;
-    padding: 5px 10px;
-    transform: rotate(-7deg);
-    display: inline-block;
-    margin-right: 10px;
-    background-color: #ea1c5e;
-    color: #f9c29d;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-[disabled] {
-    pointer-events: none;
-    border-color: #b5b5b5 !important;
-    color: #b5b5b5 !important;
-    opacity: .5;
-}
-
-        @font-face {
-    font-family: 'Lemonism';
-    src: url('vendor/lemonism/lemonism-webfont.woff2') format('woff2'),
-         url('vendor/lemonism/lemonism-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-        section {
-            width: 100%;
-            padding: 100px 0;
-        }
-
-        .social {
-            display: flex;
-            margin-top: 10px;
-            margin-left: -5px;
-        }
-
-        .social img {
-            width: 40px;
-        }
-
-        .sipario {
-    width: 100%;
-    height: 40vh;
-    z-index: 10;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background-color: #2A603E;
-        }
-
-        .sipario-bkg {
-            position: absolute;
-            width:100%;background-color: #192a48;
-            height: 100%;
-            color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Lemonism', cursive;
-    font-size: 3em;
-        }
-
-
-        .intro {            
-            /*min-height: 100%;*/
-    background-color: #2A603E;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-        }
-        .poltrona {
-            width: 400px;
-    margin-right: 70px;
-        }
-        .poltrona img{
-            width: 100%;
-    max-width: 400px;
-        }
-
-        header {
-            padding: 30px 0;
-    color: #e40053;
-    font-size: 2em;
-    margin-top: 40px;
-        }
-        header h5,header h2 {
-            margin:0;
-        }
-
-        header h2 {
-            margin: 10px 0 0;
-            text-shadow: 0px -3px 0px #fdf7f7, 1px 0px 0px #fdf7f7, 1px -3px 0px #fdf7f7;
-            font-family: 'Lemonism', cursive;
-            font-size: 5rem;
-        }
-
-        header .payoff {
-            font-family: 'Chivo', sans-serif;
-            font-size: 1.2rem;
-        }
-
-        h2,h5 {
-            font-family: 'Chivo', sans-serif;
-            font-weight: 900;
-        }
-        .tag {
-            font-family: 'Lemonism', cursive;
-            color: #192a48;
-            font-size: 1.5em;
-        }
-
-        .secondary {
-            background-color: #f9c29d;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        .date {
-            color: #e40053;
-            font-family: 'Lemonism', cursive;
-            display: inline-block;
-            font-size: 1.4em;
-        }
-
-        .calendar {
-            font-family: 'Chivo', sans-serif;
-    color: #192a48;
-    font-size: 1.5em;
-    list-style: none;
-    text-align: center;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-        }
-
-        .calendar>li {
-    margin-right: 20px;
-    margin-top: 60px;
-    width: 280px;
-}
-
-        /* .calendar > li:not(:first-child) {
-            margin-top: 15px;
-        } */
-
-        ul.names {
-            list-style: none;
-            margin-top: 5px;
-            padding: 0;
-        }
-        ul.names li:first-child {
-            font-weight: 900;
-        }
-        ul.names li:not(:first-child) {            
-            font-size: 0.8em;
-        }
-        ul.names small {
-            margin-top: -5px;
-    position: relative;
-    display: block;
-    font-size: .8em;
-        }
-
-
-        .video-container {
-    position: relative;
-    width:60%;
-}
-
-.video-container::after {
-    padding-top: 56.25%;
-    display: block;
-    content: '';
-}
-
-.video-container > a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.cactus {
-    position: absolute;
-    width: 100px;
-    bottom: 0;
-    right: -60px;
-}
-
-.play-icon {
-    background-image: url(img/play-icon.png);
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-size: 10vw;
-}
-
-.play-bkg{
-    position: absolute;top: 0;right: 0;width: 100%;height: 100%;background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
-}
-
-
-.sponsor h2 {
-    text-align: center;
-    color: #e40053;
-}
-
-
-.sponsor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.sponsor img:not(:last-child) {
-    margin-right: 30px;
-}
-
-.sponsor h2:not(:first-child) {
-margin-top: 80px;
-}
-
-.footer {
-    background-color: #192a48;
-    color: #e40053;
-    font-family: 'Chivo', sans-serif;
-    font-weight: 900;
-    text-align: center;
-    font-size: 1em;
-}
-.footer .social {
-    margin: 0;
-    display: block;
-}
-.footer a {
-    color:#e40053;
-}
-
-.arrow-down {
-    margin-top: 10px;
-    fill: white;
-    animation: bounce 2s infinite;
-    cursor: pointer;
-}
-
-.sponsor-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.sponsor img {
-    margin-bottom: 20px;
-}
-
-
-.scroll-down {
-    text-align: center;
-    line-height: 25px;
-}
-
-.pulse {
-    box-shadow: 0 0 0 rgba(228, 0, 83, 0.6);
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    -moz-box-shadow: 0 0 0 0 rgba(228, 0, 83, 0.6);
-    box-shadow: 0 0 0 0 rgba(228, 0, 83, 0.6);
-  }
-  70% {
-      -moz-box-shadow: 0 0 0 20px rgba(228, 0, 83, 0);
-      box-shadow: 0 0 0 20px rgba(228, 0, 83, 0);
-  }
-  100% {
-      -moz-box-shadow: 0 0 0 0 rgba(228, 0, 83, 0);
-      box-shadow: 0 0 0 0 rgba(228, 0, 83, 0);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  section {
-    flex-direction: column;
-    
-  }
-
-  .scroll-down {
-    position: absolute; bottom: 50px;text-align: center;
-}
-
-  .intro {
-    align-items: center;
-    
-    font-size: 0.6em;
-  }
-
-  .intro h2 {
-      margin: 10px 20px 0;
-  }
-
-  .intro header {
-    text-align: center;
-    padding: 0;
-  }
-
-  .play-icon {
-    background-size: 20vw;
-}
-
-  .social {
-    justify-content: center;    
-    }
-    .poltrona {
-    width: calc(100% - 80px);
-    padding: 0;
-    margin: 0;
-    }
-
-    .calendar {
-        text-align: center;
-        margin:0;
-        padding: 0;
-    }
-
-    .video-container {
-        width: calc(100% - 40px);
-        margin: 50px 0 0 0;
-    }
-
-    .secondary {
-        padding: 30px 0;
-    }
-
-    .cactus {
-        position: absolute;
-        width: 70px;
-        left: 2%;
-        top: -137px;
-    }
-
-    .sponsor {
-        padding: 40px 0;
-    }
-
-    .sponsor-list {
-    display: flex;
-    flex-direction: column;
-    }
-
-    .sponsor h2:not(:first-child) {
-    margin-top: 40px;
-    }
-
-    .sponsor img {
-        margin-bottom: 10px;
-        margin-right: 0 !important;
-    }
-
-    .sipario {
-        height: 100vh;
-    }
-
-    .sipario .sponsor-list {
-        margin-top: -100px;
-    }
-    .sipario .sponsor-list img:not(:first-child) {
-        margin-top: 20px;
-    }
-
-}
-
-@keyframes bounce {
-    0% {transform: translateY(0);}
-    80% {transform: translateY(10px);}
-	100% {transform: translateY(0);}
-}
-
-
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@700;900&display=swap" rel="stylesheet">
-    <script src="/vendor/gsap/gsap.min.js"></script>
-    <script src="/vendor/gsap/ScrollTrigger.min.js"></script>
-    <script src="/vendor/gsap/ScrollToPlugin.min.js"></script>
+    <script src="vendor/gsap/gsap.min.js?v=2"></script>
+    <script src="vendor/gsap/ScrollTrigger.min.js?v=2"></script>
+    <script src="vendor/gsap/ScrollToPlugin.min.js?v=2"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-26NRHMPYRC"></script>
@@ -452,53 +37,87 @@ margin-top: 80px;
     </script>
 </head>
 <body>
-    <div class="sipario">
-        <div class="sipario-bkg">
-            <div class="sponsor-list">
-                <img src="img/loghi/logo-orchestra-negative.jpg?1" alt="">
-                <img src="img/loghi/logo-allinone-negative.jpg" alt="">
-                <img src="img/loghi/logo-lou-tapage-negative.jpg" alt="">
-            </div>
-            
-            <a class="scroll-down" onclick="UTIL.scrollTo('.intro');">
-                <div style="    margin-top: 40px;">presentano</div>
-                <svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
-            </a>
-        </div>
-        <img src="img/sipario.svg" style="    background-color: #2A603E;        z-index: 130;        position: absolute;        bottom: 0;" alt="Sipario">
-    </div>
-
-    
-    <!--<section style="background: url('img/teatro.png')"></section>-->
     <section class="intro">
-        <div class="poltrona">
-            <img src="img/logo-natale.png" alt="Stasera non viene nessuno">
-        </div>
-        <header>
-            <span class="tag">#SNVN</span>
-            <h2>Puntata <small>di</small> natale<br><small>in</small> diretta streaming</h2>
-            <h5>25 DICEMBRE 2020 ore 21.15</h5>
-            <div class="payoff"><small>con</small> <b>Willie Peyote, Daniele Pecci, Guido Guglielminetti, Macs Barberis</b></div>
-            <div class="social">
-                <a href="https://www.facebook.com/Stasera-Non-Viene-Nessuno-109503880783508" target="_blank" rel="noopener noreferrer"><img src="img/facebook.svg" alt="Facebook"></a>
-                <a href="https://www.instagram.com/staseranonvienenessuno_/" target="_blank" rel="noopener noreferrer"><img src="img/instagram.svg" alt="Instagram"></a>
-                <a href="https://www.youtube.com/channel/UCRoKzBP9y8rmdcRSgY-0a5Q/" target="_blank" rel="noopener noreferrer"><img src="img/youtube.svg" alt="YouTube"></a>
+        <img class="sipario-punte" src="/img/sipario-punte.svg?v=2" alt="">
+        <div class="intro-bkg"></div>
+
+        <div class="intro-main">
+                <img class="intro-logo fade-in-bottom" src="/img/snvn.svg?v=2" alt="">
+                <div class="intro-labels">
+                    <img class="fade-in-bottom" src="img/btn-distorted-1.svg?v=2" width="203px">
+                    <img class="fade-in-bottom" style="animation-delay: .1s;" src="img/btn-distorted-2.svg?v=2" width="218px">
+                    <img class="fade-in-bottom" style="animation-delay: .2s;" src="img/btn-distorted-3.svg?v=2" width="293px">
+                </div>
+                <div style="width:100%"></div>
+            <div class="intro-description fade-in-bottom" style="animation-delay: .4s;">
+                <div class="intro-description-bkg"></div>
+
+                <div class="intro-description-text">
+                    <b>Stasera Non Viene Nessuno</b> è lo spettacolo dal vivo in live
+                    streaming <br>ideato e prodotto da un collettivo di musicisti, attori
+                    e <br>operatori dello spettacolo durante il lockdown.
+                </div>
+
+            
+                <div class="intro-social">
+                    <span class="social-tag">#SNVN</span>
+                    <a href="https://www.facebook.com/Stasera-Non-Viene-Nessuno-109503880783508" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 180 180">
+                            <path style="fill:#CBE2F4;" d="M149.2,93.44c0-32.72-26.55-59.27-59.27-59.27S30.66,60.72,30.66,93.44c0,29.6,21.67,54.14,50.05,58.53v-41.44
+                                H65.58V93.44h15.14V80.38c0-14.83,8.79-23.07,22.34-23.07c6.47,0,13.18,1.22,13.18,1.22v14.47h-7.45c-7.39,0-9.7,4.64-9.7,9.28
+                                v11.11h16.48l-2.62,17.09H99.09v41.44C127.53,147.58,149.2,123.04,149.2,93.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/staseranonvienenessuno_/" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 180 180">
+                            <path style="fill:#CBE2F4;" d="M90,41.71c15.73,0,17.59,0.06,23.8,0.34c5.74,0.26,8.86,1.22,10.94,2.03c2.75,1.07,4.71,2.34,6.77,4.41
+                                c2.06,2.06,3.34,4.02,4.41,6.77c0.81,2.08,1.77,5.19,2.03,10.94c0.28,6.21,0.34,8.07,0.34,23.8s-0.06,17.59-0.34,23.8
+                                c-0.26,5.74-1.22,8.86-2.03,10.94c-1.07,2.75-2.34,4.71-4.41,6.77c-2.06,2.06-4.02,3.34-6.77,4.41c-2.08,0.81-5.19,1.77-10.94,2.03
+                                c-6.21,0.28-8.07,0.34-23.8,0.34s-17.59-0.06-23.8-0.34c-5.74-0.26-8.86-1.22-10.94-2.03c-2.75-1.07-4.71-2.34-6.77-4.41
+                                c-2.06-2.06-3.34-4.02-4.41-6.77c-0.81-2.08-1.77-5.19-2.03-10.94c-0.28-6.21-0.34-8.07-0.34-23.8s0.06-17.59,0.34-23.8
+                                c0.26-5.74,1.22-8.86,2.03-10.94c1.07-2.75,2.34-4.71,4.41-6.77c2.06-2.06,4.02-3.34,6.77-4.41c2.08-0.81,5.19-1.77,10.94-2.03
+                                C72.41,41.77,74.27,41.71,90,41.71 M90,31.1c-16,0-18,0.07-24.28,0.35c-6.27,0.29-10.55,1.28-14.3,2.74
+                                c-3.87,1.51-7.16,3.52-10.43,6.79c-3.27,3.27-5.29,6.56-6.79,10.43c-1.46,3.75-2.45,8.03-2.74,14.3C31.17,72,31.1,74,31.1,90
+                                c0,16,0.07,18,0.35,24.28c0.29,6.27,1.28,10.55,2.74,14.3c1.51,3.87,3.52,7.16,6.79,10.43c3.27,3.27,6.56,5.29,10.43,6.79
+                                c3.75,1.46,8.03,2.45,14.3,2.74C72,148.83,74,148.9,90,148.9s18-0.07,24.28-0.35c6.27-0.29,10.55-1.28,14.3-2.74
+                                c3.87-1.51,7.16-3.52,10.43-6.79c3.27-3.27,5.29-6.56,6.79-10.43c1.46-3.75,2.45-8.03,2.74-14.3C148.83,108,148.9,106,148.9,90
+                                s-0.07-18-0.35-24.28c-0.29-6.27-1.28-10.55-2.74-14.3c-1.51-3.87-3.52-7.16-6.79-10.43c-3.27-3.27-6.56-5.29-10.43-6.79
+                                c-3.75-1.46-8.03-2.45-14.3-2.74C108,31.17,106,31.1,90,31.1L90,31.1z"/>
+                            <path style="fill:#CBE2F4;" d="M90,59.75C73.3,59.75,59.75,73.3,59.75,90S73.3,120.25,90,120.25S120.25,106.7,120.25,90S106.7,59.75,90,59.75
+                                z M90,109.63c-10.84,0-19.63-8.79-19.63-19.63c0-10.84,8.79-19.63,19.63-19.63c10.84,0,19.63,8.79,19.63,19.63
+                                C109.63,100.84,100.84,109.63,90,109.63z"/>
+                            <circle style="fill:#CBE2F4;" cx="121.44" cy="58.56" r="7.07"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCRoKzBP9y8rmdcRSgY-0a5Q/" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 180 180">
+                            <path style="fill:#CBE2F4" d="M160.46,90c0,0,0,23.08-2.94,34.14c-1.62,6.1-6.4,10.91-12.46,12.54
+                                c-10.99,2.96-55.06,2.96-55.06,2.96s-44.07,0-55.06-2.96c-6.06-1.63-10.84-6.44-12.46-12.54C19.54,113.08,19.54,90,19.54,90
+                                s0-23.08,2.94-34.14c1.62-6.1,6.4-10.91,12.46-12.54C45.93,40.36,90,40.36,90,40.36s44.07,0,55.06,2.96
+                                c6.06,1.63,10.84,6.44,12.46,12.54C160.46,66.92,160.46,90,160.46,90z M75.59,110.95L112.42,90L75.59,69.05V110.95z"/>
+                            </svg>
+                    </a>
+                </div>
             </div>
-            <br>
-            <a href="https://youtu.be/XwHoMIZlZYQ" target="_blank" rel="noopener noreferrer" class="btn pulse">GUARDA LA DIRETTA</a>
-            <br><a style="margin-top: 20px;" onclick="UTIL.scrollTo('.calendar');" target="_blank" rel="noopener noreferrer" class="btn outline">RIVEDI LE PUNTATE</a>
-        </header>
+        </div>
+
+        <a onclick="UTIL.scrollTo('.secondary');" class="chevron-down bounce">
+            <img src="/img/chevron-down.svg?v=2" alt="" class="fade-in-bottom" style="animation-delay: .5s;">
+        </a>
     </section>
     <section class="secondary">
-        <h2 style="color: #ea1c5e;padding: 0 15px;text-align: center;">Ascolta il brano prodotto per <span style="color: #192a48;">#SNVN</span></h2>
-        <iframe style="margin-bottom:100px" width="60%" height="130" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/954372682&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=false"></iframe>
-        <div class="video-container">
-            <a href="https://youtu.be/XwHoMIZlZYQ" target="_blank" rel="noopener noreferrer">
-                <img src="img/video-cover-play-natale.jpg?7" style="display:inline-block; width:100%;" alt="Guarda la diretta">
-                <div class="play-bkg"></div>
-                <div class="play-icon" style="background-image: url(img/play-icon.png);width: 100%;height: 100%;background-repeat: no-repeat;background-position: center;position: absolute;top: 0;right: 0;"></div>
-            </a>
-            <svg id="Livello_1" class="cactus" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 414.51 813.41">
+        <svg class="sipario-curve" viewBox="0 0 1300 42">
+            <g transform="matrix(3.72795,9.06119e-16,-9.32487e-16,3.77812,1.13687e-13,5.54e-05)">
+                <path d="M349.79,0L0,0L-0,7.09C2.31,9 5.88,10.31 10.64,10.31C16.06,10.31 20.08,8.63 22.69,6.2C24.85,8.95 28.81,10.91 34.69,10.91C38.464,11.035 42.186,9.986 45.34,7.91C47.964,9.18 50.856,9.801 53.77,9.72C57.507,9.847 61.195,8.831 64.34,6.81C66.65,8.57 70,9.72 74.52,9.72C80,9.72 84,8 86.63,5.56C88.73,8 92.41,9.74 97.78,9.74C102.59,9.74 106.23,8.34 108.7,6.28C110.96,8.67 114.7,10.28 120.14,10.28C125.95,10.28 130.14,8.35 132.74,5.64C135,8.03 138.74,9.69 144.19,9.69C150.52,9.69 154.93,7.39 157.41,4.31C159.41,7.4 163.55,9.69 169.91,9.69C175.91,9.69 180.17,7.69 182.71,4.82C184.55,8.25 188.8,10.88 195.62,10.88C202.2,10.88 206.74,8.41 209.15,5.14C211.42,7.48 215.15,9.09 220.51,9.09C227.01,9.09 231.51,6.68 233.94,3.46C236.04,6.38 240.09,8.46 246.22,8.46C251.45,8.46 255.38,6.89 257.99,4.6C260.08,7.52 264.14,9.65 270.28,9.65C275.37,9.65 279.28,8.17 281.86,5.98L282.55,6.39C284.947,7.469 287.533,8.067 290.16,8.15C292.044,8.149 293.926,8.052 295.8,7.86C297.75,7.653 299.637,7.043 301.34,6.07C302.526,5.587 303.624,4.911 304.59,4.07C306.9,5.97 310.37,7.23 315.07,7.23C321.39,7.23 325.82,4.94 328.3,1.86C330.3,4.94 334.19,9.1 340.54,9.1C343.751,9.173 346.931,8.444 349.79,6.98L349.79,0Z" style="fill:#192A48;fill-rule:nonzero;"/>
+            </g>
+        </svg>
+        <h2>Le puntate</h2>
+
+        <!-- <h2 style="color: #ea1c5e;padding: 0 15px;text-align: center;">Ascolta il brano prodotto per <span style="color: #192a48;">#SNVN</span></h2>
+        <iframe style="margin-bottom:100px" width="60%" height="130" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/954372682&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=false"></iframe> -->
+
+        <ul class="thumbs">
+            <svg  class="cactus" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 414.51 813.41">
                 <defs>
                     <style>
                         .cls-1{fill:#118ab2;}.cls-2{fill:#ea1c5e;}.cls-3{fill:#b5ad4a;}.cls-4{fill:#fbbc97;}
@@ -518,174 +137,275 @@ margin-top: 80px;
                 <g class="flower">
                 <path class="cls-3" d="M195.92,372.56c-3.86-.07-17.09-2.38-29.58.05,6.3-10.82,8.72-23.67,10-27.58-3.18,2.21-15.23,8.12-23.91,17.43-1.26-12.46-6.86-24.27-8.13-28.18-1.27,3.65-7.55,15.52-9.1,28.15-8.34-9.34-19.82-15.61-23.15-18,1.13,3.7,3,17,9.19,28.12-12.24-2.65-25.2-1-29.32-1,3.09,2.33,12.43,12,24,17.34-11.46,5.06-21,14-24.29,16.45,3.87.07,17.09,2.38,29.58-.05-6.3,10.82-8.71,23.67-10,27.58,3.17-2.21,15.23-8.12,23.9-17.43,1.27,12.46,6.86,24.28,8.14,28.19,1.26-3.66,7.54-15.52,9.09-28.15,8.34,9.33,19.82,15.6,23.15,18-1.13-3.71-3-17-9.19-28.12,12.24,2.64,25.2,1,29.32,1-3.09-2.34-12.43-12-24-17.35C183.09,384,192.6,375,195.92,372.56ZM143.78,389h-.05v0h.05v0Z" transform="translate(-91.59 -12.53)"></path>
                 <circle class="cls-4" cx="52.52" cy="376.1" r="13.12"></circle>
-            </g><g class="flower">
-                <path class="cls-3" d="M325.8,72.6c-6.06-.12-26.81-3.74-46.41.08,9.89-17,13.68-37.14,15.67-43.28-5,3.47-23.89,12.74-37.5,27.35-2-19.55-10.77-38.08-12.77-44.22-2,5.74-11.84,24.35-14.26,44.17-13.09-14.65-31.09-24.49-36.32-28.28,1.77,5.81,4.73,26.66,14.42,44.12-19.2-4.15-39.54-1.53-46-1.53,4.84,3.67,19.49,18.79,37.59,27.22-18,7.93-32.89,22-38.11,25.8,6.07.12,26.82,3.74,46.41-.08-9.88,17-13.67,37.14-15.66,43.28,5-3.48,23.89-12.74,37.5-27.35,2,19.54,10.76,38.08,12.76,44.22,2-5.74,11.84-24.35,14.27-44.17,13.09,14.65,31.09,24.48,36.31,28.27-1.76-5.81-4.73-26.66-14.42-44.11,19.21,4.15,39.55,1.53,46,1.52-4.84-3.66-19.5-18.78-37.59-27.21C305.67,90.47,320.59,76.39,325.8,72.6ZM244,98.35h-.06l0,0v0s0,0,0,0H244a0,0,0,0,0,0,0v.06Z" transform="translate(-91.59 -12.53)"></path>
-                <circle class="cls-4" cx="152.93" cy="85.27" r="20.58"></circle>
-            </g>
+                </g><g class="flower">
+                    <path class="cls-3" d="M325.8,72.6c-6.06-.12-26.81-3.74-46.41.08,9.89-17,13.68-37.14,15.67-43.28-5,3.47-23.89,12.74-37.5,27.35-2-19.55-10.77-38.08-12.77-44.22-2,5.74-11.84,24.35-14.26,44.17-13.09-14.65-31.09-24.49-36.32-28.28,1.77,5.81,4.73,26.66,14.42,44.12-19.2-4.15-39.54-1.53-46-1.53,4.84,3.67,19.49,18.79,37.59,27.22-18,7.93-32.89,22-38.11,25.8,6.07.12,26.82,3.74,46.41-.08-9.88,17-13.67,37.14-15.66,43.28,5-3.48,23.89-12.74,37.5-27.35,2,19.54,10.76,38.08,12.76,44.22,2-5.74,11.84-24.35,14.27-44.17,13.09,14.65,31.09,24.48,36.31,28.27-1.76-5.81-4.73-26.66-14.42-44.11,19.21,4.15,39.55,1.53,46,1.52-4.84-3.66-19.5-18.78-37.59-27.21C305.67,90.47,320.59,76.39,325.8,72.6ZM244,98.35h-.06l0,0v0s0,0,0,0H244a0,0,0,0,0,0,0v.06Z" transform="translate(-91.59 -12.53)"></path>
+                    <circle class="cls-4" cx="152.93" cy="85.27" r="20.58"></circle>
+                </g>
             </svg>
-            
-        </div>
-        <ul class="calendar">
-            <li>
-                <a href="https://youtu.be/YvTb8iOCxEI" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
-                <span class="date">27 LUGLIO 2020</span>
-                <ul class="names">
-                    <li>Cacao Mental<br><small>Elektro Cumbia Psicodelica</small></li>
+            <a class="thumb" href="https://youtu.be/XwHoMIZlZYQ" target="_blank" rel="noopener noreferrer">
+                <div class="thumb-bkg-container">
+                    <div class="thumb-play"></div>
+                    <div class="thumb-bkg" style="background-image: url(/img/thumbs/puntata-8.jpg);"></div>
+                </div>
+                
+                <span class="thumb-index">Puntata #8</span>
+                <span class="thumb-date">25 DICEMBRE 2020</span>
+
+                <div class="thumb-cta">
+                    <!--<img class="thumb-play-btn" src="/img/plus-circle.svg" alt="">-->
+                    <img class="thumb-play-btn" src="/img/play-circle-fill.svg?v=2" alt="">
+                </div>
+
+                <ul class="thumb-desc">
+                    <li><span class="thumb-title">Willie Peyote</span><br><span class="thumb-subtitle">Rapper cantautore</span></li>
+                    <li>Guido Guglielminetti e Macs Barberis<br><small>Produttori musicali</small></li>
+                    <li>Daniele Pecci<br><small>Attore</small></li>
+                    <li>Pippo Ricciardi<br><small>Comico</small></li>
+                </ul>
+            </a>
+            <a class="thumb" href="https://youtu.be/YvTb8iOCxEI" target="_blank" rel="noopener noreferrer">
+                <div class="thumb-bkg-container">
+                    <div class="thumb-play"></div>
+                    <div class="thumb-bkg" style="background-image: url(/img/thumbs/puntata-7.jpg);"></div>
+                </div>
+                <span class="thumb-index">Puntata #7</span>
+                <span class="thumb-date">27 LUGLIO 2020</span>
+                
+                <div class="thumb-cta">
+                    <!--<img class="thumb-play-btn" src="/img/plus-circle.svg" alt="">-->
+                    <img class="thumb-play-btn" src="/img/play-circle-fill.svg?v=2" alt="">
+                </div>
+
+                <ul class="thumb-desc">
+                    <li><span class="thumb-title">Cacao Mental</span><br><span class="thumb-subtitle">Elektro Cumbia Psicodelica</span></li>
                     <li>Annarita Masullo<br><small>Direttore di produzione presso The Goodness Factory</small></li>
                     <li>Marta Tortia<br><small>Violinista del Teatro Regio di Torino</small></li>
                     <li>Carlo Joly<br><small>Comico</small></li>
                 </ul>
-            </li>
-	        <li>
-                <a href="https://youtu.be/6Y-BINEaFWo" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
-                <span class="date">20 LUGLIO 2020</span>
-                <ul class="names">
-                    <li>Zibba<br><small>Cantautore</small></li>
+            </a>
+	        <a class="thumb" href="https://youtu.be/6Y-BINEaFWo" target="_blank" rel="noopener noreferrer">
+                <div class="thumb-bkg-container">
+                    <div class="thumb-play"></div>
+                    <div class="thumb-bkg" style="background-image: url(/img/thumbs/puntata-6.jpg);"></div>
+                </div>
+                <span class="thumb-index">Puntata #6</span>
+                <span class="thumb-date">20 LUGLIO 2020</span>
+                
+                <div class="thumb-cta">
+                    <!--<img class="thumb-play-btn" src="/img/plus-circle.svg" alt="">-->
+                    <img class="thumb-play-btn" src="/img/play-circle-fill.svg?v=2" alt="">
+                </div>
+
+                <ul class="thumb-desc">
+                    <li><span class="thumb-title">Zibba</span><br><span class="thumb-subtitle">Cantautore</span></li>
                     <li>Balla coi cinghiali<br><small>Festival indipendente</small></li>
                     <li>Richi Selva<br><small>Stand Up Comedy</small></li>
                 </ul>
-            </li>
-            <li>
-                <a href="https://youtu.be/D2IPKWLxYQE" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
-                <span class="date">13 LUGLIO 2020</span>
-                <ul class="names">
-                    <li>Emanuele Via <br>& Charlie T</li>
+            </a>
+            <a class="thumb" href="https://youtu.be/D2IPKWLxYQE" target="_blank" rel="noopener noreferrer">
+                <div class="thumb-bkg-container">
+                    <div class="thumb-play"></div>
+                    <div class="thumb-bkg" style="background-image: url(/img/thumbs/puntata-5.jpg);"></div>
+                </div>
+                <span class="thumb-index">Puntata #5</span>
+                <span class="thumb-date">13 LUGLIO 2020</span>
+                
+                <div class="thumb-cta">
+                    <!--<img class="thumb-play-btn" src="/img/plus-circle.svg" alt="">-->
+                    <img class="thumb-play-btn" src="/img/play-circle-fill.svg?v=2" alt="">
+                </div>
+
+                <ul class="thumb-desc">
+                    <li><span class="thumb-title">Emanuele Via <br>& Charlie T</span></li>
                     <li>Magalì Berardo<br><small>Musicalista - Agenzia di booking internazionale</small></li>
                     <li>Roberto Zuino e Gabriele Girondi<br><small>Teatro Sequenza</small></li>
                 </ul>
-            </li>
-            <li>
-                <a href="https://youtu.be/7gQLDEbtSB4" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
-                <span class="date">06 LUGLIO 2020</span>
-                <ul class="names">
-                    <li>Magasin du Cafè</li>
+            </a>
+            <a class="thumb" href="https://youtu.be/7gQLDEbtSB4" target="_blank" rel="noopener noreferrer">
+                <div class="thumb-bkg-container">
+                    <div class="thumb-play"></div>
+                    <div class="thumb-bkg" style="background-image: url(/img/thumbs/puntata-4.jpg);"></div>
+                </div>
+                <span class="thumb-index">Puntata #4</span>
+                <span class="thumb-date">06 LUGLIO 2020</span>
+                
+                <div class="thumb-cta">
+                    <!--<img class="thumb-play-btn" src="/img/plus-circle.svg" alt="">-->
+                    <img class="thumb-play-btn" src="/img/play-circle-fill.svg?v=2" alt="">
+                </div>
+
+                <ul class="thumb-desc">
+                    <li><span class="thumb-title">Magasin du Cafe'</span></li>
                     <li>Elide Giordanengo</li>
                     <li>Riccardo Parravicini<br><small>Tecnico del suono</small></li>
                     <li>Emanuele Tumolo<br><small>Torino Lounge Comedy</small></li>
                 </ul>
-            </li>
-            <li>
-                <a href="https://youtu.be/tiVu7m7l3Qw" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
-                <span class="date">29 GIUGNO 2020</span>
-                <ul class="names">
-                    <li>Mezz'ora Canonica</li>
+            </a>
+            <a class="thumb" href="https://youtu.be/tiVu7m7l3Qw" target="_blank" rel="noopener noreferrer">
+                <div class="thumb-bkg-container">
+                    <div class="thumb-play"></div>
+                    <div class="thumb-bkg" style="background-image: url(/img/thumbs/puntata-3.jpg);"></div>
+                </div>
+                <span class="thumb-index">Puntata #3</span>
+                <span class="thumb-date">29 GIUGNO 2020</span>
+                
+                <div class="thumb-cta">
+                    <!--<img class="thumb-play-btn" src="/img/plus-circle.svg" alt="">-->
+                    <img class="thumb-play-btn" src="/img/play-circle-fill.svg?v=2" alt="">
+                </div>
+
+                <ul class="thumb-desc">
+                    <li><span class="thumb-title">Mezz'ora Canonica</span></li>
                     <li>Claudia Ferrari</li>
                     <li>Guido Costamagna<br><small>Big Talu Music Service</small></li>
                     <li>Antonio Piazza<br><small>Torino Lounge Comedy</small></li>
                 </ul>
-            </li>
-            <li>
-                <a href="https://youtu.be/1968xPJ_UgI" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a>
-                <span class="date">22 GIUGNO 2020</span>
-                <ul class="names">
-                    <li>Radio Ravot</li>
+            </a>
+            <a class="thumb" href="https://youtu.be/1968xPJ_UgI" target="_blank" rel="noopener noreferrer">
+                <div class="thumb-bkg-container">
+                    <div class="thumb-play"></div>
+                    <div class="thumb-bkg" style="background-image: url(/img/thumbs/puntata-2.jpg);"></div>
+                </div>
+                
+                <span class="thumb-index">Puntata #2</span>
+                <span class="thumb-date">22 GIUGNO 2020</span>
+                
+                <div class="thumb-cta">
+                    <!--<img class="thumb-play-btn" src="/img/plus-circle.svg" alt="">-->
+                    <img class="thumb-play-btn" src="/img/play-circle-fill.svg?v=2" alt="">
+                </div>
+
+                <ul class="thumb-desc">
+                    <li><span class="thumb-title">Radio Ravot</span></li>
                     <li>Francesca Monte</li>
                     <li>Roberto Punzi<br><small>Tecnico e produttore teatrale</small></li>
                     <li>Pippo Ricciardi<br><small>Torino Lounge Comedy</small></li>
                 </ul>
-            </li>
-            <li>
-                <a href="https://www.youtube.com/watch?v=3uP_kypToLo" target="_blank" rel="noopener noreferrer" class="btn-tag">RIVEDI</a><span class="date">15 GIUGNO 2020</span>
-                <ul class="names">
-                    <li>Lou Tapage</li>
+            </a>
+            <a class="thumb" href="https://www.youtube.com/watch?v=3uP_kypToLo" target="_blank" rel="noopener noreferrer">
+                <div class="thumb-bkg-container">
+                    <div class="thumb-play"></div>
+                    <div class="thumb-bkg" style="background-image: url(/img/thumbs/puntata-1.jpg);"></div>
+                </div>
+                <span class="thumb-index">Puntata #1</span>
+                <span class="thumb-date">15 GIUGNO 2020</span>
+                
+                <div class="thumb-cta">
+                    <!--<img class="thumb-play-btn" src="/img/plus-circle.svg" alt="">-->
+                    <img class="thumb-play-btn" src="/img/play-circle-fill.svg?v=2" alt="">
+                </div>
+
+                <ul class="thumb-desc">
+                    <li><span class="thumb-title">Lou Tapage</span><br><span class="thumb-subtitle">Folk Rock</span></li>
                     <li>Gimmy Basilotta</li>
                     <li>Samuele Corrado<br><small>Lavoratori e lavoratrici dello spettacolo Piemonte</small></li>
                     <li>Marco Los<br><small>Cuneo Comedy Night</small></li>
                 </ul>
-            </li>
-        </ul>
-    </section>
-    <section class="sponsor">
-        <h2>PROPOSTO DA</h2>
-        <div class="sponsor-list">
-            <img src="img/loghi/logo-orchestra.jpg?1" alt="">
-            <img src="img/loghi/logo-allinone.jpg" alt="">
-            <img src="img/loghi/logo-lou-tapage.jpg" alt="">
-        </div>
-        <h2>CON IL SUPPORTO DI</h2>
-        <div class="sponsor-list">
-            
-            <img src="img/loghi/logo-cuneo.jpg" alt="">
-        </div>
-        <h2>CON IL CONTRIBUTO DI</h2>
-        <div class="sponsor-list">
-            <img src="img/loghi/logo-fondazione-crc.jpg" alt="">
-            <img src="img/loghi/logo-fcrt.jpg?1" alt="">
-        </div>
-        <h2>CON LA COLLABORAZIONE DI</h2>
-        <div class="sponsor-list">            
-            <img src="img/loghi/logo-varco.jpg" alt="">  
-            <img src="img/loghi/logo-showtime.jpg" alt="">          
-            <img src="img/loghi/logo-caffe-sociale.jpg" alt="">
-            <img src="img/loghi/logo-targatocn.jpg" alt="">
-            <img src="img/loghi/logo-melarancio.jpg" alt="">
+            </a>
         </div>
     </section>
 
+    <section class="gallery">
+        <svg class="sipario-curve" viewBox="0 0 1300 42">
+            <g transform="matrix(3.72795,9.06119e-16,-9.32487e-16,3.77812,1.13687e-13,5.54e-05)">
+                <path d="M349.79,0L0,0L-0,7.09C2.31,9 5.88,10.31 10.64,10.31C16.06,10.31 20.08,8.63 22.69,6.2C24.85,8.95 28.81,10.91 34.69,10.91C38.464,11.035 42.186,9.986 45.34,7.91C47.964,9.18 50.856,9.801 53.77,9.72C57.507,9.847 61.195,8.831 64.34,6.81C66.65,8.57 70,9.72 74.52,9.72C80,9.72 84,8 86.63,5.56C88.73,8 92.41,9.74 97.78,9.74C102.59,9.74 106.23,8.34 108.7,6.28C110.96,8.67 114.7,10.28 120.14,10.28C125.95,10.28 130.14,8.35 132.74,5.64C135,8.03 138.74,9.69 144.19,9.69C150.52,9.69 154.93,7.39 157.41,4.31C159.41,7.4 163.55,9.69 169.91,9.69C175.91,9.69 180.17,7.69 182.71,4.82C184.55,8.25 188.8,10.88 195.62,10.88C202.2,10.88 206.74,8.41 209.15,5.14C211.42,7.48 215.15,9.09 220.51,9.09C227.01,9.09 231.51,6.68 233.94,3.46C236.04,6.38 240.09,8.46 246.22,8.46C251.45,8.46 255.38,6.89 257.99,4.6C260.08,7.52 264.14,9.65 270.28,9.65C275.37,9.65 279.28,8.17 281.86,5.98L282.55,6.39C284.947,7.469 287.533,8.067 290.16,8.15C292.044,8.149 293.926,8.052 295.8,7.86C297.75,7.653 299.637,7.043 301.34,6.07C302.526,5.587 303.624,4.911 304.59,4.07C306.9,5.97 310.37,7.23 315.07,7.23C321.39,7.23 325.82,4.94 328.3,1.86C330.3,4.94 334.19,9.1 340.54,9.1C343.751,9.173 346.931,8.444 349.79,6.98L349.79,0Z" style="fill:#F9C29D;fill-rule:nonzero;"/>
+            </g>
+        </svg>
+        <div class="slider">
+            <div class="slide" style="background-image: url(/img/slider/slide-1.jpg)"></div>
+            <div class="slide" style="background-image: url(/img/slider/slide-2.jpg)"></div>
+            <div class="slide" style="background-image: url(/img/slider/slide-3.jpg)"></div>
+            <div class="slide" style="background-image: url(/img/slider/slide-4.jpg)"></div>
+            <div class="slide" style="background-image: url(/img/slider/slide-5.jpg)"></div>
+            <div class="slide" style="background-image: url(/img/slider/slide-6.jpg)"></div>
+            <div class="slide" style="background-image: url(/img/slider/slide-7.jpg)"></div>
+            <div class="slide" style="background-image: url(/img/slider/slide-8.jpg)"></div>
+            <div class="slide" style="background-image: url(/img/slider/slide-9.jpg)"></div>
+            <div class="slide" style="background-image: url(/img/slider/slide-11.jpg)"></div>
+            <div class="slide" style="background-image: url(/img/slider/slide-12.jpg)"></div>
+            <div class="slide" style="background-image: url(/img/slider/slide-13.jpg)"></div>
+            <div class="slide" style="background-image: url(/img/slider/slide-14.jpg)"></div>
+            <div class="slide" style="background-image: url(/img/slider/slide-15.jpg)"></div>
+            <div class="slide" style="background-image: url(/img/slider/slide-16.jpg)"></div>
+        </div>
+
+        <svg class="sipario-bottom" viewBox="0 0 1304 42" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+            <path d="M1304,-0L0,-0L0,42L1304,42L1304,-0ZM1304,0L0,0L0,26.787C8.612,34.003 21.92,38.952 39.665,38.952C59.871,38.952 74.857,32.605 84.587,23.424C92.64,33.814 107.402,41.219 129.323,41.219C143.392,41.692 157.267,37.728 169.025,29.885C178.807,34.683 189.589,37.029 200.452,36.723C214.383,37.203 228.132,33.365 239.856,25.729C248.468,32.379 260.957,36.723 277.807,36.723C298.236,36.723 313.148,30.225 322.952,21.006C330.781,30.225 344.5,36.799 364.519,36.799C382.45,36.799 396.02,31.51 405.228,23.727C413.653,32.756 427.596,38.839 447.876,38.839C469.535,38.839 485.155,31.547 494.848,21.309C503.273,30.338 517.216,36.61 537.533,36.61C561.131,36.61 577.571,27.92 586.817,16.284C594.273,27.958 609.706,36.61 633.416,36.61C655.784,36.61 671.665,29.054 681.134,18.211C687.993,31.17 703.837,41.106 729.262,41.106C753.791,41.106 770.716,31.774 779.701,19.42C788.163,28.26 802.068,34.343 822.05,34.343C846.282,34.343 863.058,25.238 872.117,13.072C879.945,24.104 895.044,31.963 917.896,31.963C937.393,31.963 952.044,26.031 961.774,17.379C969.565,28.412 984.701,36.459 1007.59,36.459C1026.57,36.459 1041.14,30.867 1050.76,22.593L1053.33,24.142C1062.27,28.219 1071.91,30.478 1081.7,30.792C1088.72,30.788 1095.74,30.421 1102.73,29.696C1110,28.914 1117.03,26.609 1123.38,22.933C1127.8,21.108 1131.89,18.554 1135.5,15.377C1144.11,22.555 1157.04,27.316 1174.57,27.316C1198.13,27.316 1214.64,18.664 1223.89,7.027C1231.34,18.664 1245.84,34.381 1269.52,34.381C1281.49,34.657 1293.34,31.903 1304,26.371L1304,0Z" style="fill:#fff;"/>
+        </svg>
+    </section>
+
+    <section class="sponsor">
+
+
+        <h3>PROPOSTO DA</h3>
+        <div class="sponsor-list">
+            <img src="img/loghi/logo-orchestra.jpg?v=2" alt="">
+            <img src="img/loghi/logo-allinone.jpg?v=2" alt="">
+            <img src="img/loghi/logo-lou-tapage.jpg?v=2" alt="">
+        </div>
+        <h3>CON IL SUPPORTO DI</h3>
+        <div class="sponsor-list">
+            
+            <img src="img/loghi/logo-cuneo.jpg?v=2" alt="">
+        </div>
+        <h3>CON IL CONTRIBUTO DI</h3>
+        <div class="sponsor-list">
+            <img src="img/loghi/logo-fondazione-crc.jpg?v=2" alt="">
+            <img src="img/loghi/logo-fcrt.jpg?v=2" alt="">
+        </div>
+        <h3>CON LA COLLABORAZIONE DI</h3>
+        <div class="sponsor-list">            
+            <img src="img/loghi/logo-varco.jpg?v=2" alt="">  
+            <img src="img/loghi/logo-showtime.jpg?v=2" alt="">          
+            <img src="img/loghi/logo-caffe-sociale.jpg?v=2" alt="">
+            <img src="img/loghi/logo-targatocn.jpg?v=2" alt="">
+            <img src="img/loghi/logo-melarancio.jpg?v=2" alt="">
+        </div>
+    </section>
+
+
     <section class="footer">
+        
+
+        <svg class="sipario-curve" viewBox="0 0 1300 42">
+            <g transform="matrix(3.72795,9.06119e-16,-9.32487e-16,3.77812,1.13687e-13,5.54e-05)">
+                <path d="M349.79,0L0,0L-0,7.09C2.31,9 5.88,10.31 10.64,10.31C16.06,10.31 20.08,8.63 22.69,6.2C24.85,8.95 28.81,10.91 34.69,10.91C38.464,11.035 42.186,9.986 45.34,7.91C47.964,9.18 50.856,9.801 53.77,9.72C57.507,9.847 61.195,8.831 64.34,6.81C66.65,8.57 70,9.72 74.52,9.72C80,9.72 84,8 86.63,5.56C88.73,8 92.41,9.74 97.78,9.74C102.59,9.74 106.23,8.34 108.7,6.28C110.96,8.67 114.7,10.28 120.14,10.28C125.95,10.28 130.14,8.35 132.74,5.64C135,8.03 138.74,9.69 144.19,9.69C150.52,9.69 154.93,7.39 157.41,4.31C159.41,7.4 163.55,9.69 169.91,9.69C175.91,9.69 180.17,7.69 182.71,4.82C184.55,8.25 188.8,10.88 195.62,10.88C202.2,10.88 206.74,8.41 209.15,5.14C211.42,7.48 215.15,9.09 220.51,9.09C227.01,9.09 231.51,6.68 233.94,3.46C236.04,6.38 240.09,8.46 246.22,8.46C251.45,8.46 255.38,6.89 257.99,4.6C260.08,7.52 264.14,9.65 270.28,9.65C275.37,9.65 279.28,8.17 281.86,5.98L282.55,6.39C284.947,7.469 287.533,8.067 290.16,8.15C292.044,8.149 293.926,8.052 295.8,7.86C297.75,7.653 299.637,7.043 301.34,6.07C302.526,5.587 303.624,4.911 304.59,4.07C306.9,5.97 310.37,7.23 315.07,7.23C321.39,7.23 325.82,4.94 328.3,1.86C330.3,4.94 334.19,9.1 340.54,9.1C343.751,9.173 346.931,8.444 349.79,6.98L349.79,0Z" style="fill:#fff;fill-rule:nonzero;"/>
+            </g>
+        </svg>
+
+        <img class="footer-poltrona" src="img/poltrona.svg?v=2" alt=""><br>
+
         © 2020 - #SNVN - Stasera non viene nessuno
         <div class="social">
-            <a href="https://www.facebook.com/Stasera-Non-Viene-Nessuno-109503880783508" target="_blank" rel="noopener noreferrer"><img src="img/facebook.svg" alt="Facebook"></a>
-            <a href="https://www.instagram.com/staseranonvienenessuno_/" target="_blank" rel="noopener noreferrer"><img src="img/instagram.svg" alt="Instagram"></a>
-            <a href="https://www.youtube.com/channel/UCRoKzBP9y8rmdcRSgY-0a5Q/" target="_blank" rel="noopener noreferrer"><img src="img/youtube.svg" alt="YouTube"></a>
+            <a href="https://www.facebook.com/Stasera-Non-Viene-Nessuno-109503880783508" target="_blank" rel="noopener noreferrer"><img src="img/facebook.svg?v=2" alt="Facebook"></a>
+            <a href="https://www.instagram.com/staseranonvienenessuno_/" target="_blank" rel="noopener noreferrer"><img src="img/instagram.svg?v=2" alt="Instagram"></a>
+            <a href="https://www.youtube.com/channel/UCRoKzBP9y8rmdcRSgY-0a5Q/" target="_blank" rel="noopener noreferrer"><img src="img/youtube.svg?v=2" alt="YouTube"></a>
         </div>
         <small>Made with &#127797; by <a href="https://chiarapittano.it/" target="_blank" rel="noopener noreferrer">Chiara Pittano</a> and <a href="https://miriorama.com" target="_blank" rel="noopener noreferrer">Miriorama</a></small>
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="vendor/tiny-slider/tiny-slider.min.js?v=2"></script>
     <script>
-        gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
-
-        gsap.set('.flower', {
-            transformOrigin:"50% 50%",
-            scaleX:0,
-            scaleY:0,
-        });
-        gsap.to('.flower', {
-            scrollTrigger: {
-                start: '-50% center',
-                end: 'bottom center',
-                trigger: 'section.secondary',
-                scrub: 1
-            },
-            rotation: 360,
-            transformOrigin:"50% 50%",
-            scaleX:1,
-            scaleY:1,
-            duration: 3
+        var slider = tns({
+            container: '.slider',
+            controls: false,
+            autoplay: true,
+            autoplayButtonOutput: false,
+            speed: 1000
         });
 
-        let offset =  document.body.clientHeight / 100 * 5;
+        // animazioni hero integrate con slider
+        let transitionStart = function () {
+            let els = document.querySelectorAll('.tns-slide-active .hero-text, .tns-slide-active .hero-img');
 
-        gsap.set('.intro > *', {
-            translateY:offset,
-        });
-        gsap.to('.intro > *', {
-            scrollTrigger: {
-                trigger: '.intro',
-                start: 'top bottom',
-                end: 'bottom bottom',
-                scrub: 1,
-            },
-            translateY: '-=' + offset,
-            duration: 3
-        });
-
-        var UTIL = (function(){
-            let util = {};
-
-            util.scrollTo = function(selector) {
-                gsap.to(window, {duration: 1, scrollTo: selector});
+            for (let i = 0; i < els.length; i++) {
+                let elm = els.item(i);
+                let newone = elm.cloneNode(true);
+                elm.parentNode.replaceChild(newone, elm);
             }
-
-            return util;
-        })();        
-
-        /*$(window).scroll(function() {
-        var theta = $(window).scrollTop() / 10 % Math.PI;
-            $('.flower').css({ transform: 'rotate(' + theta + 'rad)' });
-            $('.flower').css({ transform: 'rotate(-' + theta + 'rad)' });
-        });*/
+        }
+        slider.events.on('transitionStart', transitionStart);
     </script>
+    <script src="app.js?v=2"></script>
 </body>
 </html>
