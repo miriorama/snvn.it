@@ -316,9 +316,10 @@ ul.names small {
 /* THUMBS */
 .thumbs {
   display: flex;
-  width: calc(100% - 20px);
+  width: calc(100% - 30px);
   flex-wrap: wrap;
   position: relative;
+  margin-right: -30px;
 }
 .thumb {
   text-decoration: none;
@@ -750,7 +751,12 @@ ul.names small {
 }
 @media screen and (max-width: 600px) {
   .thumb {
-    width: calc(100%);
+    width: 100%;
+    margin-right: 20px;
+  }
+  .thumbs {
+    width: calc(100% - 20px);
+    margin-right: -20px;
   }
   .slider {
     height: 50vh !important;
